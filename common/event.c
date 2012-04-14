@@ -9,7 +9,7 @@
  * available at http://gnu.org/licenses
  */
 
-#include <event.h>
+#include <conf-event.h>
 
 #include <syslog.h>
 #include <libxml/parser.h>
