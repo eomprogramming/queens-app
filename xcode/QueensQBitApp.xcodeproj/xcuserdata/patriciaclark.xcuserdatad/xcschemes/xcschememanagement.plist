@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Q'Bet.xcscheme</key>
+		<key>QueensQBitApp.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,12 +12,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>13E9EC59155986880070F487</key>
+		<key>060CC64D1552F45D0009D54B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>13E9EC88155986880070F487</key>
+		<key>060CC67C1552F45E0009D54B</key>
 		<dict>
 			<key>primary</key>
 			<true/>

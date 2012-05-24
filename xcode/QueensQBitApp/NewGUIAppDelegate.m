@@ -1,29 +1,35 @@
 //
-//  AppDelegate.m
-//  Q'Bet
+//  NewGUIAppDelegate.m
+//  QueensQBitApp
 //
-//  Created by David Huynh on 12-05-08.
-//  Copyright (c) 2012 EOM. All rights reserved.
+//  Created by Patricia Clark on 12-05-03.
+//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "NewGUIAppDelegate.h"
 
-@implementation AppDelegate
+#import "NewGUIFirstViewController.h"
+
+#import "NewGUISecondViewController.h"
+
+@implementation NewGUIAppDelegate
 
 @synthesize window = _window;
-
-- (void)dealloc
-{
-    [_window release];
-    [super dealloc];
-}
+@synthesize tabBarController = _tabBarController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    UIViewController *viewController1 = [[NewGUIFirstViewController alloc] initWithNibName:@"NewGUIFirstViewController" bundle:nil];
+    UIViewController *viewController2 = [[NewGUISecondViewController alloc] initWithNibName:@"NewGUISecondViewController" bundle:nil];
+    self.tabBarController = [[UITabBarController alloc] init];
+    self.tabBarController.viewControllers = [NSArray arrayWithObjects:viewController1, viewController2, nil];
+    self.window.rootViewController = self.tabBarController;
+    [self.window makeKeyAndVisible];
     return YES;
 }
-							
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -50,5 +56,19 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+/*
+// Optional UITabBarControllerDelegate method.
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
+{
+}
+*/
+
+/*
+// Optional UITabBarControllerDelegate method.
+- (void)tabBarController:(UITabBarController *)tabBarController didEndCustomizingViewControllers:(NSArray *)viewControllers changed:(BOOL)changed
+{
+}
+*/
 
 @end

@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Q&apos;Bet.xcodeproj">
+      location = "self:QueensQBitApp.xcodeproj">
    </FileRef>
 </Workspace>

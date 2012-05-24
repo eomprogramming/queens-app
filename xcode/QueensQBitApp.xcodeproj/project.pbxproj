@@ -1,0 +1,479 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		060CC6531552F45D0009D54B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 060CC6521552F45D0009D54B /* UIKit.framework */; };
+		060CC6551552F45D0009D54B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 060CC6541552F45D0009D54B /* Foundation.framework */; };
+		060CC6571552F45D0009D54B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 060CC6561552F45D0009D54B /* CoreGraphics.framework */; };
+		060CC65D1552F45E0009D54B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 060CC65B1552F45E0009D54B /* InfoPlist.strings */; };
+		060CC65F1552F45E0009D54B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 060CC65E1552F45E0009D54B /* main.m */; };
+		060CC6631552F45E0009D54B /* NewGUIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 060CC6621552F45E0009D54B /* NewGUIAppDelegate.m */; };
+		060CC6661552F45E0009D54B /* NewGUIFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 060CC6651552F45E0009D54B /* NewGUIFirstViewController.m */; };
+		060CC6681552F45E0009D54B /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 060CC6671552F45E0009D54B /* first.png */; };
+		060CC66A1552F45E0009D54B /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 060CC6691552F45E0009D54B /* first@2x.png */; };
+		060CC66D1552F45E0009D54B /* NewGUISecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 060CC66C1552F45E0009D54B /* NewGUISecondViewController.m */; };
+		060CC66F1552F45E0009D54B /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 060CC66E1552F45E0009D54B /* second.png */; };
+		060CC6711552F45E0009D54B /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 060CC6701552F45E0009D54B /* second@2x.png */; };
+		060CC6741552F45E0009D54B /* NewGUIFirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 060CC6721552F45E0009D54B /* NewGUIFirstViewController.xib */; };
+		060CC6771552F45E0009D54B /* NewGUISecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 060CC6751552F45E0009D54B /* NewGUISecondViewController.xib */; };
+		060CC67F1552F45E0009D54B /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 060CC67E1552F45E0009D54B /* SenTestingKit.framework */; };
+		060CC6801552F45E0009D54B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 060CC6521552F45D0009D54B /* UIKit.framework */; };
+		060CC6811552F45E0009D54B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 060CC6541552F45D0009D54B /* Foundation.framework */; };
+		060CC6891552F45E0009D54B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 060CC6871552F45E0009D54B /* InfoPlist.strings */; };
+		060CC68C1552F45E0009D54B /* QueensQBitAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 060CC68B1552F45E0009D54B /* QueensQBitAppTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		060CC6821552F45E0009D54B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 060CC6451552F45D0009D54B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 060CC64D1552F45D0009D54B;
+			remoteInfo = QueensQBitApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		060CC64E1552F45D0009D54B /* QueensQBitApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QueensQBitApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		060CC6521552F45D0009D54B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		060CC6541552F45D0009D54B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		060CC6561552F45D0009D54B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		060CC65A1552F45E0009D54B /* QueensQBitApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "QueensQBitApp-Info.plist"; sourceTree = "<group>"; };
+		060CC65C1552F45E0009D54B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		060CC65E1552F45E0009D54B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		060CC6601552F45E0009D54B /* QueensQBitApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QueensQBitApp-Prefix.pch"; sourceTree = "<group>"; };
+		060CC6611552F45E0009D54B /* NewGUIAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewGUIAppDelegate.h; sourceTree = "<group>"; };
+		060CC6621552F45E0009D54B /* NewGUIAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewGUIAppDelegate.m; sourceTree = "<group>"; };
+		060CC6641552F45E0009D54B /* NewGUIFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewGUIFirstViewController.h; sourceTree = "<group>"; };
+		060CC6651552F45E0009D54B /* NewGUIFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewGUIFirstViewController.m; sourceTree = "<group>"; };
+		060CC6671552F45E0009D54B /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
+		060CC6691552F45E0009D54B /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
+		060CC66B1552F45E0009D54B /* NewGUISecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewGUISecondViewController.h; sourceTree = "<group>"; };
+		060CC66C1552F45E0009D54B /* NewGUISecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewGUISecondViewController.m; sourceTree = "<group>"; };
+		060CC66E1552F45E0009D54B /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
+		060CC6701552F45E0009D54B /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		060CC6731552F45E0009D54B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/NewGUIFirstViewController.xib; sourceTree = "<group>"; };
+		060CC6761552F45E0009D54B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/NewGUISecondViewController.xib; sourceTree = "<group>"; };
+		060CC67D1552F45E0009D54B /* QueensQBitAppTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QueensQBitAppTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		060CC67E1552F45E0009D54B /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		060CC6861552F45E0009D54B /* QueensQBitAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "QueensQBitAppTests-Info.plist"; sourceTree = "<group>"; };
+		060CC6881552F45E0009D54B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		060CC68A1552F45E0009D54B /* QueensQBitAppTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QueensQBitAppTests.h; sourceTree = "<group>"; };
+		060CC68B1552F45E0009D54B /* QueensQBitAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QueensQBitAppTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		060CC64B1552F45D0009D54B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				060CC6531552F45D0009D54B /* UIKit.framework in Frameworks */,
+				060CC6551552F45D0009D54B /* Foundation.framework in Frameworks */,
+				060CC6571552F45D0009D54B /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		060CC6791552F45E0009D54B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				060CC67F1552F45E0009D54B /* SenTestingKit.framework in Frameworks */,
+				060CC6801552F45E0009D54B /* UIKit.framework in Frameworks */,
+				060CC6811552F45E0009D54B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		060CC6431552F45D0009D54B = {
+			isa = PBXGroup;
+			children = (
+				060CC6581552F45D0009D54B /* QueensQBitApp */,
+				060CC6841552F45E0009D54B /* QueensQBitAppTests */,
+				060CC6511552F45D0009D54B /* Frameworks */,
+				060CC64F1552F45D0009D54B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		060CC64F1552F45D0009D54B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				060CC64E1552F45D0009D54B /* QueensQBitApp.app */,
+				060CC67D1552F45E0009D54B /* QueensQBitAppTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		060CC6511552F45D0009D54B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				060CC6521552F45D0009D54B /* UIKit.framework */,
+				060CC6541552F45D0009D54B /* Foundation.framework */,
+				060CC6561552F45D0009D54B /* CoreGraphics.framework */,
+				060CC67E1552F45E0009D54B /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		060CC6581552F45D0009D54B /* QueensQBitApp */ = {
+			isa = PBXGroup;
+			children = (
+				060CC6611552F45E0009D54B /* NewGUIAppDelegate.h */,
+				060CC6621552F45E0009D54B /* NewGUIAppDelegate.m */,
+				060CC6641552F45E0009D54B /* NewGUIFirstViewController.h */,
+				060CC6651552F45E0009D54B /* NewGUIFirstViewController.m */,
+				060CC6671552F45E0009D54B /* first.png */,
+				060CC6691552F45E0009D54B /* first@2x.png */,
+				060CC66B1552F45E0009D54B /* NewGUISecondViewController.h */,
+				060CC66C1552F45E0009D54B /* NewGUISecondViewController.m */,
+				060CC66E1552F45E0009D54B /* second.png */,
+				060CC6701552F45E0009D54B /* second@2x.png */,
+				060CC6721552F45E0009D54B /* NewGUIFirstViewController.xib */,
+				060CC6751552F45E0009D54B /* NewGUISecondViewController.xib */,
+				060CC6591552F45E0009D54B /* Supporting Files */,
+			);
+			path = QueensQBitApp;
+			sourceTree = "<group>";
+		};
+		060CC6591552F45E0009D54B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				060CC65A1552F45E0009D54B /* QueensQBitApp-Info.plist */,
+				060CC65B1552F45E0009D54B /* InfoPlist.strings */,
+				060CC65E1552F45E0009D54B /* main.m */,
+				060CC6601552F45E0009D54B /* QueensQBitApp-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		060CC6841552F45E0009D54B /* QueensQBitAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				060CC68A1552F45E0009D54B /* QueensQBitAppTests.h */,
+				060CC68B1552F45E0009D54B /* QueensQBitAppTests.m */,
+				060CC6851552F45E0009D54B /* Supporting Files */,
+			);
+			path = QueensQBitAppTests;
+			sourceTree = "<group>";
+		};
+		060CC6851552F45E0009D54B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				060CC6861552F45E0009D54B /* QueensQBitAppTests-Info.plist */,
+				060CC6871552F45E0009D54B /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		060CC64D1552F45D0009D54B /* QueensQBitApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 060CC68F1552F45E0009D54B /* Build configuration list for PBXNativeTarget "QueensQBitApp" */;
+			buildPhases = (
+				060CC64A1552F45D0009D54B /* Sources */,
+				060CC64B1552F45D0009D54B /* Frameworks */,
+				060CC64C1552F45D0009D54B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QueensQBitApp;
+			productName = QueensQBitApp;
+			productReference = 060CC64E1552F45D0009D54B /* QueensQBitApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		060CC67C1552F45E0009D54B /* QueensQBitAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 060CC6921552F45E0009D54B /* Build configuration list for PBXNativeTarget "QueensQBitAppTests" */;
+			buildPhases = (
+				060CC6781552F45E0009D54B /* Sources */,
+				060CC6791552F45E0009D54B /* Frameworks */,
+				060CC67A1552F45E0009D54B /* Resources */,
+				060CC67B1552F45E0009D54B /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				060CC6831552F45E0009D54B /* PBXTargetDependency */,
+			);
+			name = QueensQBitAppTests;
+			productName = QueensQBitAppTests;
+			productReference = 060CC67D1552F45E0009D54B /* QueensQBitAppTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		060CC6451552F45D0009D54B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = NewGUI;
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = 060CC6481552F45D0009D54B /* Build configuration list for PBXProject "QueensQBitApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 060CC6431552F45D0009D54B;
+			productRefGroup = 060CC64F1552F45D0009D54B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				060CC64D1552F45D0009D54B /* QueensQBitApp */,
+				060CC67C1552F45E0009D54B /* QueensQBitAppTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		060CC64C1552F45D0009D54B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				060CC65D1552F45E0009D54B /* InfoPlist.strings in Resources */,
+				060CC6681552F45E0009D54B /* first.png in Resources */,
+				060CC66A1552F45E0009D54B /* first@2x.png in Resources */,
+				060CC66F1552F45E0009D54B /* second.png in Resources */,
+				060CC6711552F45E0009D54B /* second@2x.png in Resources */,
+				060CC6741552F45E0009D54B /* NewGUIFirstViewController.xib in Resources */,
+				060CC6771552F45E0009D54B /* NewGUISecondViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		060CC67A1552F45E0009D54B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				060CC6891552F45E0009D54B /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		060CC67B1552F45E0009D54B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		060CC64A1552F45D0009D54B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				060CC65F1552F45E0009D54B /* main.m in Sources */,
+				060CC6631552F45E0009D54B /* NewGUIAppDelegate.m in Sources */,
+				060CC6661552F45E0009D54B /* NewGUIFirstViewController.m in Sources */,
+				060CC66D1552F45E0009D54B /* NewGUISecondViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		060CC6781552F45E0009D54B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				060CC68C1552F45E0009D54B /* QueensQBitAppTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		060CC6831552F45E0009D54B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 060CC64D1552F45D0009D54B /* QueensQBitApp */;
+			targetProxy = 060CC6821552F45E0009D54B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		060CC65B1552F45E0009D54B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				060CC65C1552F45E0009D54B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		060CC6721552F45E0009D54B /* NewGUIFirstViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				060CC6731552F45E0009D54B /* en */,
+			);
+			name = NewGUIFirstViewController.xib;
+			sourceTree = "<group>";
+		};
+		060CC6751552F45E0009D54B /* NewGUISecondViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				060CC6761552F45E0009D54B /* en */,
+			);
+			name = NewGUISecondViewController.xib;
+			sourceTree = "<group>";
+		};
+		060CC6871552F45E0009D54B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				060CC6881552F45E0009D54B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		060CC68D1552F45E0009D54B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		060CC68E1552F45E0009D54B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		060CC6901552F45E0009D54B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "QueensQBitApp/QueensQBitApp-Prefix.pch";
+				INFOPLIST_FILE = "QueensQBitApp/QueensQBitApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		060CC6911552F45E0009D54B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "QueensQBitApp/QueensQBitApp-Prefix.pch";
+				INFOPLIST_FILE = "QueensQBitApp/QueensQBitApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		060CC6931552F45E0009D54B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/QueensQBitApp.app/QueensQBitApp";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "QueensQBitApp/QueensQBitApp-Prefix.pch";
+				INFOPLIST_FILE = "QueensQBitAppTests/QueensQBitAppTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		060CC6941552F45E0009D54B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/QueensQBitApp.app/QueensQBitApp";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "QueensQBitApp/QueensQBitApp-Prefix.pch";
+				INFOPLIST_FILE = "QueensQBitAppTests/QueensQBitAppTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		060CC6481552F45D0009D54B /* Build configuration list for PBXProject "QueensQBitApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				060CC68D1552F45E0009D54B /* Debug */,
+				060CC68E1552F45E0009D54B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		060CC68F1552F45E0009D54B /* Build configuration list for PBXNativeTarget "QueensQBitApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				060CC6901552F45E0009D54B /* Debug */,
+				060CC6911552F45E0009D54B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		060CC6921552F45E0009D54B /* Build configuration list for PBXNativeTarget "QueensQBitAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				060CC6931552F45E0009D54B /* Debug */,
+				060CC6941552F45E0009D54B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 060CC6451552F45D0009D54B /* Project object */;
+}

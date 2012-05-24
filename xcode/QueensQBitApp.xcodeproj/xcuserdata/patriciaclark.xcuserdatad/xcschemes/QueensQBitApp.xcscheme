@@ -13,10 +13,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "13E9EC59155986880070F487"
-               BuildableName = "Q&apos;Bet.app"
-               BlueprintName = "Q&apos;Bet"
-               ReferencedContainer = "container:Q&apos;Bet.xcodeproj">
+               BlueprintIdentifier = "060CC64D1552F45D0009D54B"
+               BuildableName = "QueensQBitApp.app"
+               BlueprintName = "QueensQBitApp"
+               ReferencedContainer = "container:QueensQBitApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -31,20 +31,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "13E9EC88155986880070F487"
-               BuildableName = "Q&apos;BetTests.octest"
-               BlueprintName = "Q&apos;BetTests"
-               ReferencedContainer = "container:Q&apos;Bet.xcodeproj">
+               BlueprintIdentifier = "060CC67C1552F45E0009D54B"
+               BuildableName = "QueensQBitAppTests.octest"
+               BlueprintName = "QueensQBitAppTests"
+               ReferencedContainer = "container:QueensQBitApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "13E9EC59155986880070F487"
-            BuildableName = "Q&apos;Bet.app"
-            BlueprintName = "Q&apos;Bet"
-            ReferencedContainer = "container:Q&apos;Bet.xcodeproj">
+            BlueprintIdentifier = "060CC64D1552F45D0009D54B"
+            BuildableName = "QueensQBitApp.app"
+            BlueprintName = "QueensQBitApp"
+            ReferencedContainer = "container:QueensQBitApp.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -60,10 +60,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "13E9EC59155986880070F487"
-            BuildableName = "Q&apos;Bet.app"
-            BlueprintName = "Q&apos;Bet"
-            ReferencedContainer = "container:Q&apos;Bet.xcodeproj">
+            BlueprintIdentifier = "060CC64D1552F45D0009D54B"
+            BuildableName = "QueensQBitApp.app"
+            BlueprintName = "QueensQBitApp"
+            ReferencedContainer = "container:QueensQBitApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -78,10 +78,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "13E9EC59155986880070F487"
-            BuildableName = "Q&apos;Bet.app"
-            BlueprintName = "Q&apos;Bet"
-            ReferencedContainer = "container:Q&apos;Bet.xcodeproj">
+            BlueprintIdentifier = "060CC64D1552F45D0009D54B"
+            BuildableName = "QueensQBitApp.app"
+            BlueprintName = "QueensQBitApp"
+            ReferencedContainer = "container:QueensQBitApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
