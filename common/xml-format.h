@@ -19,7 +19,7 @@
  * The number of *_DATA_TYPE data types that can be extracted from an
  * event_data.
  */
-#define NUM_DATA_TYPES 5
+#define NUM_DATA_TYPES 6
 
 /**
  * Data type tag to get the name of an event.
@@ -46,6 +46,11 @@
  * extract_data() will return a char *.
  */
 #define DATETIME_DATA_TYPE 4
+/**
+ * Data type tag to get the location of the associated image of an event.
+ * extract_data() will return a char *.
+ */
+#define IMAGE_DATE_TYPE 5
 
 /**
  * An internal representation of a place from which to extract data about

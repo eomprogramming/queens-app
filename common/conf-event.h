@@ -24,7 +24,8 @@ struct event {
 	struct tm *datetime;
 	char *loc;
 	char *description;
-	char *sponsors;
+	char **sponsors;
+	char *image;
 };
 
 /**
@@ -87,5 +88,12 @@ struct event *read_event_list(const char *filename, int *num);
  * @return The sponsor (char **)
  */
 #define ev_sponsors(e) (e)->sponsors
+
+/**
+ * Get the location of an event's associated image.
+ * @param e the event.
+ * @return The location (char *)
+ */
+#define ev_image_loc(e) (e)->image
 
 #endif /* CONF_EVENT_H_ */

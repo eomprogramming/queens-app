@@ -34,6 +34,7 @@ static const struct {
 	[SPONSORS_DATA_TYPE] = {.name = "sponsors", .flags = LIST_OF_SUBELEMENT,
 		.arg = "sponsor"},
 	[DATETIME_DATA_TYPE] = {.name = "datetime", .flags = 0},
+	[IMAGE_DATA_TYPE] = {.name = "image", .flags = 0},
 }
 
 event_data_source *new_event_source(const char *filename) {
