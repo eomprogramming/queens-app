@@ -112,9 +112,15 @@ void *extract_data(const event_data e, unsigned int data_type) {
 			if (!xml_isNode(cur, format[data_type].name))
 				continue;
 			cur2 = cur->children;
-			array_result = (char **) malloc((sizeof(char *) *
-				count_subnodes(cur, format[data_type].arg))
-				+ 1);
+			array_result = (char **) malloc(sizeof(char *) *
+				(count_subnodes(cur, format[data_type].arg)
+				+ 1));
+			if (array_result == NULL) {
+				syslog(LOG_ERR, "Error in allocating space to"
+					"hold %s data from file %s.",
+					format[data_type].name, e->doc->name);
+				return NULL;
+			}
 			result = array_result;
 			do {
 				if(!xml_isNode(cur2, format[data_type].arg))
@@ -122,6 +128,7 @@ void *extract_data(const event_data e, unsigned int data_type) {
 				(*result) = xml_getStrd(cur2);
 				result++;
 			} while (xml_nextNode(cur2));
+			result = NULL;
 			return (void *)array_result;
 		} while (xml_nextNode(cur));	
 	} else if (format[data_type] & IS_EVENT_ATTRIBUTE) {
