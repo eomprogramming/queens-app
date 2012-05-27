@@ -2,7 +2,8 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ([2.68])
-AC_INIT([QBet Library], [1.0], [eomprogramming@gmail.com],, [http://github.com/eomprogramming/queens-app])
+AC_INIT([QBet Library], [1.0], [eomprogramming@gmail.com],,
+	[http://github.com/eomprogramming/queens-app])
 AC_CONFIG_SRCDIR([conf-event.h])
 AM_INIT_AUTOMAKE([-Wall foreign silent-rules])
 

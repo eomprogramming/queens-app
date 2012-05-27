@@ -39,7 +39,8 @@ struct event {
  *
  * @param[in] filename The file to read data from.
  * @param[out] num If it is not NULL, it will be set to the number of elements
- *  in the result array (unless an error occurs).
+ *  in the result array, not including the terminal null. (unless an error
+ *  occurs).
  * 
  * @return The list of events in the file, terminated by the null event
  *  (check for this using EVENT_IS_NULL), or NULL if an error occured.<br/>
@@ -54,7 +55,7 @@ struct event *read_event_list(const char *filename, int *num);
 /**
  * Get the title of an event.
  * @param e the event
- * @return The title
+ * @return The title (char *)
  */
 #define ev_title(e) (e)->title
 
@@ -69,22 +70,22 @@ struct event *read_event_list(const char *filename, int *num);
 /**
  * Get the location of an event.
  * @param e the event
- * @return The location
+ * @return The location (char *)
  */
 #define ev_loc(e) (e)->loc
 
 /**
  * Get the description of an event.
  * @param e the event
- * @return The description
+ * @return The description (char *)
  */
 #define ev_desc(e) (e)->description
 
 /**
- * Get the sponsor of an event.
+ * Get the sponsors of an event.
  * @param e the event
- * @return The sponsor
+ * @return The sponsor (char **)
  */
-#define ev_sponsor(e) (e)->sponsors
+#define ev_sponsors(e) (e)->sponsors
 
 #endif /* CONF_EVENT_H_ */
