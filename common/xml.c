@@ -27,7 +27,7 @@ static const struct {
 	char *name;
 	int flags;
 	char *arg;
-}[NUM_DATA_TYPES] format = {
+} format[NUM_DATA_TYPES] = {
 	[NAME_DATA_TYPE] = {.name = "name", .flags = IS_EVENT_ATTRIBUTE},
 	[LOCATION_DATA_TYPE] = {.name = "location", .flags = 0},
 	[DESCRIPTION_DATA_TYPE] = {.name = "description", .flags = 0},
@@ -35,14 +35,14 @@ static const struct {
 		.arg = "sponsor"},
 	[DATETIME_DATA_TYPE] = {.name = "datetime", .flags = 0},
 	[IMAGE_DATA_TYPE] = {.name = "image", .flags = 0},
-}
+};
 
 event_data_source *new_event_source(const char *filename) {
 	event_data_source *ret;
 
 	ret = (event_data_source *) malloc(sizeof(event_data_source));
 	if (ret == NULL) {
-		syslog(LOG_ERR, "Error allocating memory at %s in %s.",
+		syslog(LOG_ERR, "Error allocating memory at %i in %s.",
 				__LINE__, __FILE__);
 		return NULL;
 	}
@@ -57,7 +57,7 @@ event_data_source *new_event_source(const char *filename) {
 	ret->n = ret->d->children;
 	if (!xml_isNode(ret->n, ROOT_ELEMENT_NAME)) {
 		syslog(LOG_ERR, "Invalid root element name \"%s\" in file %s.",
-				((root == NULL)?"ERROR":root->name), filename);
+				(char *)((ret->n->name == NULL)?"ERROR":ret->n->name), filename);
 		return NULL;
 	}
 
@@ -101,7 +101,7 @@ void *extract_data(const event_data e, unsigned int data_type) {
 	char *result = NULL;
 
 	if (data_type >= NUM_DATA_TYPES) {
-		syslog(LOG_WARN, "Bad data type passed to extract_data: %i",
+		syslog(LOG_WARNING, "Bad data type passed to extract_data: %i",
 				data_type);
 		return NULL;
 	}
@@ -121,17 +121,17 @@ void *extract_data(const event_data e, unsigned int data_type) {
 					format[data_type].name, e->doc->name);
 				return NULL;
 			}
-			result = array_result;
+			result = *array_result;
 			do {
 				if(!xml_isNode(cur2, format[data_type].arg))
 					continue;
-				(*result) = xml_getStrd(cur2);
+				result = xml_getStrd(cur2);
 				result++;
 			} while (xml_nextNode(cur2));
 			result = NULL;
 			return (void *)array_result;
 		} while (xml_nextNode(cur));	
-	} else if (format[data_type] & IS_EVENT_ATTRIBUTE) {
+	} else if (format[data_type].flags & IS_EVENT_ATTRIBUTE) {
 		return (void *) xml_nodeProp(e, format[data_type].name);
 	} else {
 		cur = e->children;

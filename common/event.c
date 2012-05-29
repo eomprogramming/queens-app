@@ -38,7 +38,7 @@ struct event *read_event_list(const char *filename, int *num) {
 	if (event_count < 0)
 		return NULL;
 	if (event_count == 0) {
-		syslog(LOG_WARN, "No events in data file %s.", filename);
+		syslog(LOG_WARNING, "No events in data file %s.", filename);
 		if (num != NULL)
 			(*num) = 0;
 		under_construction = (struct event *)
@@ -66,7 +66,7 @@ struct event *read_event_list(const char *filename, int *num) {
 				NAME_DATA_TYPE);
 		/* Title can never be NULL: if it is, warn and skip. */
 		if (under_construction->title == NULL) {
-			syslog(LOG_WARN, "Unable to get name of an event in"
+			syslog(LOG_WARNING, "Unable to get name of an event in"
 					"file %s.", filename);
 			continue;
 		}
