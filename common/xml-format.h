@@ -50,7 +50,7 @@
  * Data type tag to get the location of the associated image of an event.
  * extract_data() will return a char *.
  */
-#define IMAGE_DATE_TYPE 5
+#define IMAGE_DATA_TYPE 5
 
 /**
  * An internal representation of a place from which to extract data about
@@ -115,6 +115,6 @@ void reset_event_source(event_data_source *e);
  * 	#SPONSORS_DATA_TYPE
  * 	#DATETIME_DATA_TYPE
  */
-void *extract_data(const event_data *e, unsigned int data_type);
+void *extract_data(const event_data e, unsigned int data_type);
 
 #endif /* FORMAT_H_ */
