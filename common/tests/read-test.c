@@ -15,30 +15,30 @@
 
 #define MAX_COMMAND_LENGTH 254
 
-//typedef int (*test_command_t)(char *args);
-static const struct command {
-	char *name;
-	int (*function)(char *);
-}[] functions = {
-	{"count1", count1},
-	{"count2", count2},
-	{"name", name},
-	{NULL, NULL},
-}
+static struct event *events;
+static int eventc = -1;
 
 static int call(char *comm, char *arg);
 static int count1(char *args);
 static int count2(char *args);
 static int name(char *args);
 
-static struct event *events;
-static int eventc = -1;
+//typedef int (*test_command_t)(char *args);
+static const struct command {
+	char *name;
+	int (*function)(char *);
+}functions[] = {
+	{"count1", count1},
+	{"count2", count2},
+	{"name", name},
+	{NULL, NULL},
+};
 
 int main(int argc, char **argv) {
-	char[MAX_COMMAND_LENGTH+1] command;
-	char[MAX_COMMAND_LENGTH+1] command_name;
+	char command[MAX_COMMAND_LENGTH+1];
+	char command_name[MAX_COMMAND_LENGTH+1];
 	char *arg;
-	int last_blank = FALSE;
+	int last_blank = 0;
 	int retval = 0;
 
 	if (argc <= 1) {
@@ -53,7 +53,7 @@ int main(int argc, char **argv) {
 		for (arg = command; (*arg) != '\0'; arg++) {
 			// TODO: identify blank chars
 			//if (isblank(*arg)) {
-				last_blank = TRUE;
+				last_blank = 1;
 			//} else {
 				if (last_blank)
 					break;
@@ -107,6 +107,6 @@ static int name(char *args) {
 	if ((index < 0) || (index > eventc))
 		return 1;
 
-	printf("%s", ev_title(events[index]));
+	printf("%s", ev_title(&events[index]));
 	return 0;
 }
