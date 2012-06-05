@@ -42,7 +42,7 @@ int main(int argc, char **argv) {
 	int retval = 0;
 
 	if (argc <= 1) {
-		printf("Usage: read-test <input-file>");
+		printf("Usage: read-test <input-file>\n");
 		return 0;
 	}
 
@@ -51,13 +51,12 @@ int main(int argc, char **argv) {
 	for (; !feof(stdin); fgets(command, MAX_COMMAND_LENGTH+1, stdin)) {
 		sscanf(command, "%s", command_name);
 		for (arg = command; (*arg) != '\0'; arg++) {
-			// TODO: identify blank chars
-			//if (isblank(*arg)) {
+			if (isblank(*arg)) {
 				last_blank = 1;
-			//} else {
+			} else {
 				if (last_blank)
 					break;
-			//}
+			}
 		}
 
 		if ((*arg) == '\0') // No args
@@ -75,8 +74,7 @@ static int call(char *comm, char *arg) {
 	struct command *cur;
 
 	for (cur = functions; cur->name != NULL; cur++) {
-		// TODO: strcmp->how work
-		//if (strcmp(cur->name, comm))
+		if (!strcmp(cur->name, comm))
 			return cur->function(arg);
 	}
 

@@ -67,7 +67,7 @@ event_data_source *new_event_source(const char *filename) {
 }
 
 void free_event_source(event_data_source *e) {
-	xmlDocFree(e->d);
+	xmlFreeDoc(e->d);
 	free(e);
 }
 
