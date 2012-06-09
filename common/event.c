@@ -13,8 +13,8 @@
 
 #include "conf-event.h"
 #include "format.h"
+#include "syslog_layer.h"
 
-#include <syslog.h>
 #include <stdlib.h>
 #include <time.h>
 #include <string.h>

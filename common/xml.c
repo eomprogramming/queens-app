@@ -11,9 +11,9 @@
 
 #include "xml-format.h"
 #include "xml.h"
+#include "syslog_layer.h"
 
 #include <stdlib.h>
-#include <syslog.h>
 
 #define ROOT_ELEMENT_NAME "event-list"
 #define EVENT_ELEMENT_NAME "event"
@@ -67,7 +67,7 @@ event_data_source *new_event_source(const char *filename) {
 }
 
 void free_event_source(event_data_source *e) {
-	xmlFreeDoc(e->d);
+	xmlDocFree(e->d);
 	free(e);
 }
 
