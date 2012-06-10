@@ -95,9 +95,6 @@ struct event *read_event_list(const char *filename, int *num) {
 	}
 
 	/* Return the result */
-	under_construction = (struct event *) malloc(sizeof(struct event));
-	if (under_construction == NULL)
-		return NULL;
 	(*under_construction) = (struct event) {.title = NULL, .datetime =
 		NULL, .loc = NULL, .description = NULL, .sponsors = NULL};
 	if (num != NULL)

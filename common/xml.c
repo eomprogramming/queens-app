@@ -99,6 +99,7 @@ void *extract_data(const event_data e, unsigned int data_type) {
 	xmlNodePtr cur2;
 	char **array_result = NULL;
 	char *result = NULL;
+	int i;
 
 	if (data_type >= NUM_DATA_TYPES) {
 		syslog(LOG_WARNING, "Bad data type passed to extract_data: %i",
@@ -121,14 +122,12 @@ void *extract_data(const event_data e, unsigned int data_type) {
 					format[data_type].name, e->doc->name);
 				return NULL;
 			}
-			result = *array_result;
-			do {
+			for (i = 0; xml_nextNode(cur2); i++) {
 				if(!xml_isNode(cur2, format[data_type].arg))
 					continue;
-				result = xml_getStrd(cur2);
-				result++;
-			} while (xml_nextNode(cur2));
-			result = NULL;
+				array_result[i] = xml_getStrd(cur2);
+			}
+			array_result[i+1] = NULL;
 			return (void *)array_result;
 		} while (xml_nextNode(cur));	
 	} else if (format[data_type].flags & IS_EVENT_ATTRIBUTE) {
