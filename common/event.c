@@ -13,13 +13,13 @@
 
 #include "conf-event.h"
 #include "format.h"
-#include "syslog_layer.h"
+#include "compat.h"
 
 #include <stdlib.h>
 #include <time.h>
 #include <string.h>
 
-static int fill_event(struct event *ev, xmlNodePtr data);
+static void iso_date_to_tm(const char *iso, struct tm *result);
 
 struct event *read_event_list(const char *filename, int *num) {
 	event_data_source *source;
@@ -89,8 +89,7 @@ struct event *read_event_list(const char *filename, int *num) {
 				under_construction++;
 				continue;
 			}
-			strptime(iso_date, "%Y-%m-%dT%H:%M:%S",
-				under_construction->datetime);
+			iso_date_to_tm(iso_date, under_construction->datetime);
 		}
 		under_construction++;
 	}
@@ -105,4 +104,15 @@ struct event *read_event_list(const char *filename, int *num) {
 		*num = event_count;
 
 	return event_list;
+}
+
+static void iso_date_to_tm(const char *iso, struct tm *result) {
+	if ((iso == NULL) || (result == NULL)) {
+		syslog(LOG_WARNING, "Bad input to iso_date_to_tm.");
+		return;
+	}
+
+	sscanf(iso, "%i-%i-%iT%i:%i:%i", &(result->tm_year), &(result->tm_mon),
+			&(result->tm_mday), &(result->tm_hour),
+			&(result->tm_min), &(result->tm_sec));
 }

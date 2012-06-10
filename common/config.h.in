@@ -1,7 +1,17 @@
 /* config.h.in.  Generated from configure.ac by autoheader.  */
 
+/* Define to 1 if you have the declaration of `strptime', and to 0 if you
+   don't. */
+#undef HAVE_DECL_STRPTIME
+
 /* Define to 1 if you have the <inttypes.h> header file. */
 #undef HAVE_INTTYPES_H
+
+/* Define to 1 if you have the `xml2' library (-lxml2). */
+#undef HAVE_LIBXML2
+
+/* Define to 1 if you have the <libxml/parser.h> header file. */
+#undef HAVE_LIBXML_PARSER_H
 
 /* Define to 1 if your system has a GNU libc compatible `malloc' function, and
    to 0 otherwise. */
