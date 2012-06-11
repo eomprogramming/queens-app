@@ -25,7 +25,6 @@ AC_CHECK_HEADERS([stdlib.h string.h libxml/parser.h],,
 AC_CHECK_HEADERS([syslog.h])
 
 # Checks for typedefs, structures, and compiler characteristics.
-AC_CHECK_DECLS([strptime])
 
 # Checks for library functions.
 AC_FUNC_MALLOC

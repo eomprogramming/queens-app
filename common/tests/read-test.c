@@ -48,6 +48,7 @@ int main(int argc, char **argv) {
 
 	events = read_event_list(argv[1], &eventc);
 
+	fgets(command, MAX_COMMAND_LENGTH+1, stdin);
 	for (; !feof(stdin); fgets(command, MAX_COMMAND_LENGTH+1, stdin)) {
 		sscanf(command, "%s", command_name);
 		for (arg = command; (*arg) != '\0'; arg++) {

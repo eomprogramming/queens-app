@@ -85,6 +85,10 @@ struct event *read_event_list(const char *filename, int *num) {
 			under_construction->datetime = (struct tm *)
 				malloc(sizeof(struct tm));
 			if (under_construction->datetime == NULL) {
+				// give up on this
+				syslog(LOG_WARNING, "Unable to allocate memory"
+						"at %i in %s.", __LINE__,
+						__FILE__);
 				under_construction->datetime = NULL;
 				under_construction++;
 				continue;

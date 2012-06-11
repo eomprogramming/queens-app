@@ -123,11 +123,13 @@ void *extract_data(const event_data e, unsigned int data_type) {
 				return NULL;
 			}
 			for (i = 0; xml_nextNode(cur2); i++) {
-				if(!xml_isNode(cur2, format[data_type].arg))
+				if(!xml_isNode(cur2, format[data_type].arg)) {
+					i--; // reset counter
 					continue;
+				}
 				array_result[i] = xml_getStrd(cur2);
 			}
-			array_result[i+1] = NULL;
+			array_result[i] = NULL;
 			return (void *)array_result;
 		} while (xml_nextNode(cur));	
 	} else if (format[data_type].flags & IS_EVENT_ATTRIBUTE) {

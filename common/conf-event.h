@@ -55,43 +55,45 @@ struct event *read_event_list(const char *filename, int *num);
 
 /**
  * Get the title of an event.
- * @param e the event
+ * @param e a pointer to the event
  * @return The title (char *)
  */
 #define ev_title(e) (e)->title
 
 /**
  * Get the date and time of an event.
- * @param e the event
- * @return The date and time, as a struct tm *.
+ * @param e a pointer to the event
+ * @return The date and time, as a struct tm *. Only the year, month, day, hour,
+ * minute and second fields will be filled: tm_wday, tm_yday and tm_isdst will
+ * be junk.
  * @see time.h
  */
 #define ev_date(e) (e)->datetime
 
 /**
  * Get the location of an event.
- * @param e the event
+ * @param e a pointer to the event
  * @return The location (char *)
  */
 #define ev_loc(e) (e)->loc
 
 /**
  * Get the description of an event.
- * @param e the event
+ * @param e a pointer to the event
  * @return The description (char *)
  */
 #define ev_desc(e) (e)->description
 
 /**
  * Get the sponsors of an event.
- * @param e the event
+ * @param e a pointer to the event
  * @return The sponsor (char **)
  */
 #define ev_sponsors(e) (e)->sponsors
 
 /**
  * Get the location of an event's associated image.
- * @param e the event.
+ * @param e a pointer to the event.
  * @return The location (char *)
  */
 #define ev_image_loc(e) (e)->image
