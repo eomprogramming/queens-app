@@ -1,6 +1,7 @@
 /*
  * This file's contents are adapted from nxml.h in Naev
- * (github.com/bobbens/naev).
+ * (http://github.com/bobbens/naev).
+ * The copyright notice may be found there in src/naev.h
  */
 
 #ifndef XML_H

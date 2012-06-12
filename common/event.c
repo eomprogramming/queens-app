@@ -13,59 +13,45 @@
 
 #include "conf-event.h"
 #include "format.h"
-#include "xml.h"
+#include "compat.h"
 
-#include <syslog.h>
 #include <stdlib.h>
 #include <time.h>
 #include <string.h>
-#include <libxml/parser.h>
 
-static int fill_event(struct event *ev, xmlNodePtr data);
+static void iso_date_to_tm(const char *iso, struct tm *result);
 
 struct event *read_event_list(const char *filename, int *num) {
-	xmlDocPtr doc;
-	xmlNodePtr root;
-	xmlNodePtr cur_event;
-	int event_count = 0;
+	event_data_source *source;
+	int event_count;
 	struct event *event_list;
 	struct event *under_construction;
+	event_data current;
+	char *iso_date = NULL;
 	int tmp;
 
-	/* Parse the document */
-	doc = xmlParseFile(filename);
-
-	if (doc == NULL) {
-		syslog(LOG_ERR, "Error parsing or locating file: %s", filename);
+	source = new_event_source(filename);
+	if (source == NULL)
 		return NULL;
-	}
 
-	/* Check for the right root node */
-	if(xml_isNode(root, ROOT_ELEMENT_NAME)) {
-		syslog(LOG_ERR, "The event file (%s) had an invalid root"
-			       "element: %s", filename, root->name);
-		xmlFreeDoc(doc);
+	event_count = count_events(source);
+	if (event_count < 0)
 		return NULL;
-	}
-
-	/* Count the nodes */
-	cur_event = root->children;
-
-	while (cur_event != NULL) {
-		if (xml_isNode(cur_event, EVENT_ELEMENT_NAME))
-			event_count++;
-		cur_event = cur_event->next;
-	}
-	
 	if (event_count == 0) {
-		syslog(LOG_WARNING, "No entries in list of events; file: %s", filename);
+		syslog(LOG_WARNING, "No events in data file %s.", filename);
 		if (num != NULL)
-			*num = 0;
-		return NULL;
+			(*num) = 0;
+		under_construction = (struct event *)
+			malloc(sizeof(struct event));
+		(*under_construction) = (struct event) {.title = NULL,
+			.datetime = NULL, .loc = NULL, .description = NULL,
+			.sponsors = NULL};
+		return under_construction;
 	}
 
 	/* Allocate the array */
-	event_list = (struct event *) malloc(sizeof(struct event) * event_count + 1);
+	event_list = (struct event *)
+		malloc(sizeof(struct event) * (event_count + 1));
 
 	if (event_list == NULL) {
 		syslog(LOG_ERR, "Unable to allocate memory for event list.");
@@ -73,67 +59,61 @@ struct event *read_event_list(const char *filename, int *num) {
 	}
 
 	/* Build the array */
-	cur_event = root->children;
 	under_construction = event_list;
 
-	while (cur_event != NULL) {
-		if (xml_isNode(cur_event, EVENT_ELEMENT_NAME)) {
-			tmp = fill_event(under_construction, cur_event);
-			if (tmp == 0)
-				under_construction++;
+	while ((current = next_event(source)) != NULL) {
+		under_construction->title = (char *) extract_data(current,
+				NAME_DATA_TYPE);
+		/* Title can never be NULL: if it is, warn and skip. */
+		if (under_construction->title == NULL) {
+			syslog(LOG_WARNING, "Unable to get name of an event in"
+					"file %s.", filename);
+			continue;
 		}
-		cur_event = cur_event->next;
+		under_construction->loc = (char *) extract_data(current,
+				LOCATION_DATA_TYPE);
+		under_construction->description = (char *) extract_data(current,
+				DESCRIPTION_DATA_TYPE);
+		under_construction->sponsors = (char **) extract_data(current,
+				SPONSORS_DATA_TYPE);
+		under_construction->image = (char *) extract_data(current,
+				IMAGE_DATA_TYPE);
+		iso_date = (char *) extract_data(current, DATETIME_DATA_TYPE);
+		if (iso_date == NULL) {
+			under_construction->datetime = NULL;
+		} else {
+			under_construction->datetime = (struct tm *)
+				malloc(sizeof(struct tm));
+			if (under_construction->datetime == NULL) {
+				// give up on this
+				syslog(LOG_WARNING, "Unable to allocate memory"
+						"at %i in %s.", __LINE__,
+						__FILE__);
+				under_construction->datetime = NULL;
+				under_construction++;
+				continue;
+			}
+			iso_date_to_tm(iso_date, under_construction->datetime);
+		}
+		under_construction++;
 	}
 
 	/* Return the result */
-	under_construction = malloc(sizeof(struct event));
-	if (under_construction == NULL)
-		return NULL;
 	(*under_construction) = (struct event) {.title = NULL, .datetime =
 		NULL, .loc = NULL, .description = NULL, .sponsors = NULL};
 	if (num != NULL)
-		*num = event_count + 1;
+		*num = event_count;
 
 	return event_list;
 }
 
-/**
- * Fill an event with data from the given xml event node.
- * @param ev the event to fill
- * @param data the node pointer to fillit from
- * @return 0 on success, 1 for a loose nut behind the wheel, 2 for a malformed
- * xml structure, >2 for any other error.
- */
-static int fill_event(struct event *ev, xmlNodePtr data) {
-	xmlNodePtr n;
-	char *iso_date = NULL;
-
-	/* Check for bad programmers */
-	if ((ev == NULL) || (data == NULL)) {
-		return 1;
+static void iso_date_to_tm(const char *iso, struct tm *result) {
+	if ((iso == NULL) || (result == NULL)) {
+		syslog(LOG_WARNING, "Bad input to iso_date_to_tm.");
+		return;
 	}
 
-	/* Get the title */
-	ev->title = xml_nodeProp(data, NAME_ATTRIBUTE_NAME);
-
-	/* Get the contents */
-	n = data->children;
-
-	while (xml_nextNode(n)) {
-		xmlr_strd(n, LOCATION_ELEMENT_NAME, ev->loc)
-		xmlr_strd(n, DESC_ELEMENT_NAME, ev->description)
-		xmlr_strd(n, SPONSOR_ELEMENT_NAME, ev->sponsors)
-		xmlr_strd(n, DATE_ELEMENT_NAME, iso_date)
-	}
-
-	if (iso_date == NULL) {
-		ev->datetime = NULL;
-	} else {
-		ev->datetime = (struct tm *) malloc(sizeof(struct tm));
-		if (ev->datetime == NULL)
-			return 3;
-		strptime(iso_date, "%Y-%m-%dT%H:%M:%S", ev->datetime);
-	}
-
-	return 0;
+	sscanf(iso, "%i-%i-%iT%i:%i:%i", &(result->tm_year), &(result->tm_mon),
+			&(result->tm_mday), &(result->tm_hour),
+			&(result->tm_min), &(result->tm_sec));
 }

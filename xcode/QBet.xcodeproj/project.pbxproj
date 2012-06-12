@@ -1,0 +1,485 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		06C3A79715865BD800D05E43 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 06C3A79615865BD800D05E43 /* libxml2.dylib */; };
+		13E9EC5F155986880070F487 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13E9EC5E155986880070F487 /* UIKit.framework */; };
+		13E9EC61155986880070F487 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13E9EC60155986880070F487 /* Foundation.framework */; };
+		13E9EC63155986880070F487 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13E9EC62155986880070F487 /* CoreGraphics.framework */; };
+		13E9EC69155986880070F487 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 13E9EC67155986880070F487 /* InfoPlist.strings */; };
+		13E9EC6B155986880070F487 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13E9EC6A155986880070F487 /* main.m */; };
+		13E9EC6F155986880070F487 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13E9EC6E155986880070F487 /* AppDelegate.m */; };
+		13E9EC72155986880070F487 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13E9EC70155986880070F487 /* MainStoryboard_iPhone.storyboard */; };
+		13E9EC75155986880070F487 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13E9EC73155986880070F487 /* MainStoryboard_iPad.storyboard */; };
+		13E9EC78155986880070F487 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13E9EC77155986880070F487 /* FirstViewController.m */; };
+		13E9EC7A155986880070F487 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 13E9EC79155986880070F487 /* first.png */; };
+		13E9EC7C155986880070F487 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 13E9EC7B155986880070F487 /* first@2x.png */; };
+		13E9EC7F155986880070F487 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13E9EC7E155986880070F487 /* SecondViewController.m */; };
+		13E9EC81155986880070F487 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 13E9EC80155986880070F487 /* second.png */; };
+		13E9EC83155986880070F487 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 13E9EC82155986880070F487 /* second@2x.png */; };
+		13E9EC8B155986880070F487 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13E9EC8A155986880070F487 /* SenTestingKit.framework */; };
+		13E9EC8C155986880070F487 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13E9EC5E155986880070F487 /* UIKit.framework */; };
+		13E9EC8D155986880070F487 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13E9EC60155986880070F487 /* Foundation.framework */; };
+		13E9EC95155986880070F487 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 13E9EC93155986880070F487 /* InfoPlist.strings */; };
+		13E9EC98155986880070F487 /* Q_BetTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 13E9EC97155986880070F487 /* Q_BetTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		13E9EC8E155986880070F487 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 13E9EC51155986880070F487 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 13E9EC59155986880070F487;
+			remoteInfo = "Q'Bet";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		06C3A79615865BD800D05E43 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		13E9EC5A155986880070F487 /* Q'Bet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Q'Bet.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		13E9EC5E155986880070F487 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		13E9EC60155986880070F487 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		13E9EC62155986880070F487 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		13E9EC66155986880070F487 /* Q'Bet-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Q'Bet-Info.plist"; sourceTree = "<group>"; };
+		13E9EC68155986880070F487 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		13E9EC6A155986880070F487 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		13E9EC6C155986880070F487 /* Q'Bet-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Q'Bet-Prefix.pch"; sourceTree = "<group>"; };
+		13E9EC6D155986880070F487 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		13E9EC6E155986880070F487 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		13E9EC71155986880070F487 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		13E9EC74155986880070F487 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		13E9EC76155986880070F487 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		13E9EC77155986880070F487 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		13E9EC79155986880070F487 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
+		13E9EC7B155986880070F487 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
+		13E9EC7D155986880070F487 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		13E9EC7E155986880070F487 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		13E9EC80155986880070F487 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
+		13E9EC82155986880070F487 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		13E9EC89155986880070F487 /* Q'BetTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Q'BetTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		13E9EC8A155986880070F487 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		13E9EC92155986880070F487 /* Q'BetTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Q'BetTests-Info.plist"; sourceTree = "<group>"; };
+		13E9EC94155986880070F487 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		13E9EC96155986880070F487 /* Q_BetTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Q_BetTests.h; sourceTree = "<group>"; };
+		13E9EC97155986880070F487 /* Q_BetTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Q_BetTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		13E9EC57155986880070F487 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06C3A79715865BD800D05E43 /* libxml2.dylib in Frameworks */,
+				13E9EC5F155986880070F487 /* UIKit.framework in Frameworks */,
+				13E9EC61155986880070F487 /* Foundation.framework in Frameworks */,
+				13E9EC63155986880070F487 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13E9EC85155986880070F487 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13E9EC8B155986880070F487 /* SenTestingKit.framework in Frameworks */,
+				13E9EC8C155986880070F487 /* UIKit.framework in Frameworks */,
+				13E9EC8D155986880070F487 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		13E9EC4F155986880070F487 = {
+			isa = PBXGroup;
+			children = (
+				06C3A79615865BD800D05E43 /* libxml2.dylib */,
+				13E9EC64155986880070F487 /* Q'Bet */,
+				13E9EC90155986880070F487 /* Q'BetTests */,
+				13E9EC5D155986880070F487 /* Frameworks */,
+				13E9EC5B155986880070F487 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		13E9EC5B155986880070F487 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				13E9EC5A155986880070F487 /* Q'Bet.app */,
+				13E9EC89155986880070F487 /* Q'BetTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		13E9EC5D155986880070F487 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				13E9EC5E155986880070F487 /* UIKit.framework */,
+				13E9EC60155986880070F487 /* Foundation.framework */,
+				13E9EC62155986880070F487 /* CoreGraphics.framework */,
+				13E9EC8A155986880070F487 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		13E9EC64155986880070F487 /* Q'Bet */ = {
+			isa = PBXGroup;
+			children = (
+				13E9EC6D155986880070F487 /* AppDelegate.h */,
+				13E9EC6E155986880070F487 /* AppDelegate.m */,
+				13E9EC70155986880070F487 /* MainStoryboard_iPhone.storyboard */,
+				13E9EC73155986880070F487 /* MainStoryboard_iPad.storyboard */,
+				13E9EC76155986880070F487 /* FirstViewController.h */,
+				13E9EC77155986880070F487 /* FirstViewController.m */,
+				13E9EC79155986880070F487 /* first.png */,
+				13E9EC7B155986880070F487 /* first@2x.png */,
+				13E9EC7D155986880070F487 /* SecondViewController.h */,
+				13E9EC7E155986880070F487 /* SecondViewController.m */,
+				13E9EC80155986880070F487 /* second.png */,
+				13E9EC82155986880070F487 /* second@2x.png */,
+				13E9EC65155986880070F487 /* Supporting Files */,
+			);
+			path = "Q'Bet";
+			sourceTree = "<group>";
+		};
+		13E9EC65155986880070F487 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				13E9EC66155986880070F487 /* Q'Bet-Info.plist */,
+				13E9EC67155986880070F487 /* InfoPlist.strings */,
+				13E9EC6A155986880070F487 /* main.m */,
+				13E9EC6C155986880070F487 /* Q'Bet-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		13E9EC90155986880070F487 /* Q'BetTests */ = {
+			isa = PBXGroup;
+			children = (
+				13E9EC96155986880070F487 /* Q_BetTests.h */,
+				13E9EC97155986880070F487 /* Q_BetTests.m */,
+				13E9EC91155986880070F487 /* Supporting Files */,
+			);
+			path = "Q'BetTests";
+			sourceTree = "<group>";
+		};
+		13E9EC91155986880070F487 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				13E9EC92155986880070F487 /* Q'BetTests-Info.plist */,
+				13E9EC93155986880070F487 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		13E9EC59155986880070F487 /* Q'Bet */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 13E9EC9B155986880070F487 /* Build configuration list for PBXNativeTarget "Q'Bet" */;
+			buildPhases = (
+				13E9EC56155986880070F487 /* Sources */,
+				13E9EC57155986880070F487 /* Frameworks */,
+				13E9EC58155986880070F487 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Q'Bet";
+			productName = "Q'Bet";
+			productReference = 13E9EC5A155986880070F487 /* Q'Bet.app */;
+			productType = "com.apple.product-type.application";
+		};
+		13E9EC88155986880070F487 /* Q'BetTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 13E9EC9E155986880070F487 /* Build configuration list for PBXNativeTarget "Q'BetTests" */;
+			buildPhases = (
+				13E9EC84155986880070F487 /* Sources */,
+				13E9EC85155986880070F487 /* Frameworks */,
+				13E9EC86155986880070F487 /* Resources */,
+				13E9EC87155986880070F487 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				13E9EC8F155986880070F487 /* PBXTargetDependency */,
+			);
+			name = "Q'BetTests";
+			productName = "Q'BetTests";
+			productReference = 13E9EC89155986880070F487 /* Q'BetTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		13E9EC51155986880070F487 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = EOM;
+			};
+			buildConfigurationList = 13E9EC54155986880070F487 /* Build configuration list for PBXProject "Q'Bet" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 13E9EC4F155986880070F487;
+			productRefGroup = 13E9EC5B155986880070F487 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				13E9EC59155986880070F487 /* Q'Bet */,
+				13E9EC88155986880070F487 /* Q'BetTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		13E9EC58155986880070F487 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13E9EC69155986880070F487 /* InfoPlist.strings in Resources */,
+				13E9EC72155986880070F487 /* MainStoryboard_iPhone.storyboard in Resources */,
+				13E9EC75155986880070F487 /* MainStoryboard_iPad.storyboard in Resources */,
+				13E9EC7A155986880070F487 /* first.png in Resources */,
+				13E9EC7C155986880070F487 /* first@2x.png in Resources */,
+				13E9EC81155986880070F487 /* second.png in Resources */,
+				13E9EC83155986880070F487 /* second@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13E9EC86155986880070F487 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13E9EC95155986880070F487 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		13E9EC87155986880070F487 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		13E9EC56155986880070F487 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13E9EC6B155986880070F487 /* main.m in Sources */,
+				13E9EC6F155986880070F487 /* AppDelegate.m in Sources */,
+				13E9EC78155986880070F487 /* FirstViewController.m in Sources */,
+				13E9EC7F155986880070F487 /* SecondViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13E9EC84155986880070F487 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13E9EC98155986880070F487 /* Q_BetTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		13E9EC8F155986880070F487 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 13E9EC59155986880070F487 /* Q'Bet */;
+			targetProxy = 13E9EC8E155986880070F487 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		13E9EC67155986880070F487 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				13E9EC68155986880070F487 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		13E9EC70155986880070F487 /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				13E9EC71155986880070F487 /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		13E9EC73155986880070F487 /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				13E9EC74155986880070F487 /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		13E9EC93155986880070F487 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				13E9EC94155986880070F487 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		13E9EC99155986880070F487 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		13E9EC9A155986880070F487 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		13E9EC9C155986880070F487 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Q'Bet/Q'Bet-Prefix.pch";
+				INFOPLIST_FILE = "Q'Bet/Q'Bet-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		13E9EC9D155986880070F487 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Q'Bet/Q'Bet-Prefix.pch";
+				INFOPLIST_FILE = "Q'Bet/Q'Bet-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		13E9EC9F155986880070F487 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Q'Bet.app/Q'Bet";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Q'Bet/Q'Bet-Prefix.pch";
+				INFOPLIST_FILE = "Q'BetTests/Q'BetTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		13E9ECA0155986880070F487 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Q'Bet.app/Q'Bet";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Q'Bet/Q'Bet-Prefix.pch";
+				INFOPLIST_FILE = "Q'BetTests/Q'BetTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		13E9EC54155986880070F487 /* Build configuration list for PBXProject "Q'Bet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13E9EC99155986880070F487 /* Debug */,
+				13E9EC9A155986880070F487 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		13E9EC9B155986880070F487 /* Build configuration list for PBXNativeTarget "Q'Bet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13E9EC9C155986880070F487 /* Debug */,
+				13E9EC9D155986880070F487 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		13E9EC9E155986880070F487 /* Build configuration list for PBXNativeTarget "Q'BetTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13E9EC9F155986880070F487 /* Debug */,
+				13E9ECA0155986880070F487 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 13E9EC51155986880070F487 /* Project object */;
+}
