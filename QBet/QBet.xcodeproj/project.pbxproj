@@ -321,7 +321,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "QBet/QBet-Prefix.pch";
-				HEADER_SEARCH_PATHS = "/Users/Ian/Code/queens-app/common/**";
+				HEADER_SEARCH_PATHS = "../common/**";
 				INFOPLIST_FILE = "QBet/QBet-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -337,7 +337,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "QBet/QBet-Prefix.pch";
-				HEADER_SEARCH_PATHS = "/Users/Ian/Code/queens-app/common/**";
+				HEADER_SEARCH_PATHS = "../common/**";
 				INFOPLIST_FILE = "QBet/QBet-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
