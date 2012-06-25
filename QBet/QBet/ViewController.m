@@ -13,14 +13,10 @@
 #import "InformationViewController.h"
 #include <syslog.h>
 
-#define kBgQueue dispatch_get_global_queue(
-DISPATCH_QUEUE_PRIORITY_DEFAULT, 0) //1
-#define day1URL [NSURL URLWithString: 
-@"http://QBET.ca/QBETAPPEVENTS/day1"] //2
-#define day2URL [NSURL URLWithString: 
-@"http://QBET.ca/QBETAPPEVENTS/day2"] //2
-#define day3URL [NSURL URLWithString: 
-@"http://QBET.ca/QBETAPPEVENTS/day3"] //2
+#define kBgQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0) //1
+#define day1URL [NSURL URLWithString:@"http://QBET.ca/QBETAPPEVENTS/day1"] //2
+#define day2URL [NSURL URLWithString:@"http://QBET.ca/QBETAPPEVENTS/day2"] //2
+#define day3URL [NSURL URLWithString:@"http://QBET.ca/QBETAPPEVENTS/day3"] //2
 
 @interface ViewController ()
 
@@ -41,20 +37,34 @@ DISPATCH_QUEUE_PRIORITY_DEFAULT, 0) //1
     
     NSString *s = [NSString stringWithCString:ev_title(&e[0])encoding:NSUTF8StringEncoding];
                   
+    
+    
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
 -(BOOL) update
 {
-    NSlo
+    __block NSData* data;
     dispatch_async(kBgQueue, ^{
-        NSData* data = [NSData dataWithContentsOfURL: 
-                        day1URL];
+        data = [NSData dataWithContentsOfURL:day1URL];
         [self performSelectorOnMainThread:@selector(fetchedData:) 
                                withObject:data waitUntilDone:YES];
     });
     
     NSString *s = [[NSString alloc] initWithData: data encoding:NSASCIIStringEncoding];
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains
+    (NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    
+    //make a file name to write the data to using the
+    //documents directory:
+    NSString *fullFileName = [NSString stringWithFormat:@"%@/test", documentsDirectory];
+
+    //this statement is what actually writes out the array
+    //to the file system:
+    [s writeToFile:fullFileName atomically:NO];
+    NSLog(@"HARRO ASSHOLE, %@",fullFileName);
     
     
     dispatch_async(kBgQueue, ^{
