@@ -22,7 +22,6 @@
 		135E5BD6157AAE5E0046896E /* QBET LOGO.png in Resources */ = {isa = PBXBuildFile; fileRef = 135E5BD5157AAE5E0046896E /* QBET LOGO.png */; };
 		13A978EE1583CBEC00E6520C /* InformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13A978EC1583CBEC00E6520C /* InformationViewController.m */; };
 		13A978EF1583CBEC00E6520C /* InformationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13A978ED1583CBEC00E6520C /* InformationViewController.xib */; };
-		13A978F21583D12700E6520C /* QBet Logo(2).png in Resources */ = {isa = PBXBuildFile; fileRef = 13A978F11583D12700E6520C /* QBet Logo(2).png */; };
 		13C01B041582F7F500FC96D7 /* QBet Main.png in Resources */ = {isa = PBXBuildFile; fileRef = 13C01B031582F7F500FC96D7 /* QBet Main.png */; };
 		13C01B0C1582F84B00FC96D7 /* CreditsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C01B0A1582F84B00FC96D7 /* CreditsViewController.m */; };
 		13C01B0D1582F84B00FC96D7 /* CreditsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13C01B0B1582F84B00FC96D7 /* CreditsViewController.xib */; };
@@ -30,6 +29,8 @@
 		13C01B12158300BB00FC96D7 /* ItineraryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13C01B10158300BB00FC96D7 /* ItineraryViewController.xib */; };
 		13C01B161583039200FC96D7 /* NewsroomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C01B141583039200FC96D7 /* NewsroomViewController.m */; };
 		13C01B171583039200FC96D7 /* NewsroomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13C01B151583039200FC96D7 /* NewsroomViewController.xib */; };
+		3C210D751598C9E9006C553F /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C210D741598C9E9006C553F /* libxml2.dylib */; };
+		3C210D771598CA5E006C553F /* libqbet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C210D761598CA5E006C553F /* libqbet.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,7 +57,6 @@
 		13A978EB1583CBEC00E6520C /* InformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InformationViewController.h; sourceTree = "<group>"; };
 		13A978EC1583CBEC00E6520C /* InformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InformationViewController.m; sourceTree = "<group>"; };
 		13A978ED1583CBEC00E6520C /* InformationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InformationViewController.xib; sourceTree = "<group>"; };
-		13A978F11583D12700E6520C /* QBet Logo(2).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "QBet Logo(2).png"; path = "../../../Dropbox/QBet App/QBet Logo(2).png"; sourceTree = "<group>"; };
 		13C01B031582F7F500FC96D7 /* QBet Main.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "QBet Main.png"; sourceTree = "<group>"; };
 		13C01B091582F84B00FC96D7 /* CreditsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreditsViewController.h; path = ../CreditsViewController.h; sourceTree = "<group>"; };
 		13C01B0A1582F84B00FC96D7 /* CreditsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreditsViewController.m; path = ../CreditsViewController.m; sourceTree = "<group>"; };
@@ -67,6 +67,8 @@
 		13C01B131583039200FC96D7 /* NewsroomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsroomViewController.h; sourceTree = "<group>"; };
 		13C01B141583039200FC96D7 /* NewsroomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsroomViewController.m; sourceTree = "<group>"; };
 		13C01B151583039200FC96D7 /* NewsroomViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsroomViewController.xib; sourceTree = "<group>"; };
+		3C210D741598C9E9006C553F /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		3C210D761598CA5E006C553F /* libqbet.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libqbet.a; path = ../common/libqbet.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C210D771598CA5E006C553F /* libqbet.a in Frameworks */,
+				3C210D751598C9E9006C553F /* libxml2.dylib in Frameworks */,
 				135E5BAA157A95290046896E /* UIKit.framework in Frameworks */,
 				135E5BAC157A95290046896E /* Foundation.framework in Frameworks */,
 				135E5BAE157A95290046896E /* CoreGraphics.framework in Frameworks */,
@@ -86,7 +90,8 @@
 		135E5B9A157A95290046896E = {
 			isa = PBXGroup;
 			children = (
-				13A978F11583D12700E6520C /* QBet Logo(2).png */,
+				3C210D761598CA5E006C553F /* libqbet.a */,
+				3C210D741598C9E9006C553F /* libxml2.dylib */,
 				135E5BD5157AAE5E0046896E /* QBET LOGO.png */,
 				13C01B031582F7F500FC96D7 /* QBet Main.png */,
 				135E5BAF157A95290046896E /* QBet */,
@@ -216,7 +221,6 @@
 				13C01B12158300BB00FC96D7 /* ItineraryViewController.xib in Resources */,
 				13C01B171583039200FC96D7 /* NewsroomViewController.xib in Resources */,
 				13A978EF1583CBEC00E6520C /* InformationViewController.xib in Resources */,
-				13A978F21583D12700E6520C /* QBet Logo(2).png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,6 +314,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "QBet/QBet-Prefix.pch";
 				INFOPLIST_FILE = "QBet/QBet-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../common\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -321,6 +329,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "QBet/QBet-Prefix.pch";
 				INFOPLIST_FILE = "QBet/QBet-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../common\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
