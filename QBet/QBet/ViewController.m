@@ -11,6 +11,17 @@
 #import "NewsroomViewController.h"
 #import "ItineraryViewController.h"
 #import "InformationViewController.h"
+#include <syslog.h>
+
+#define kBgQueue dispatch_get_global_queue(
+DISPATCH_QUEUE_PRIORITY_DEFAULT, 0) //1
+#define day1URL [NSURL URLWithString: 
+@"http://QBET.ca/QBETAPPEVENTS/day1"] //2
+#define day2URL [NSURL URLWithString: 
+@"http://QBET.ca/QBETAPPEVENTS/day2"] //2
+#define day3URL [NSURL URLWithString: 
+@"http://QBET.ca/QBETAPPEVENTS/day3"] //2
+
 @interface ViewController ()
 
 @end
@@ -19,14 +30,53 @@
 
 - (void)viewDidLoad
 {
+    NSLog(@"hgkkh");
     [super viewDidLoad];
-    
+    openlog("QBet App", LOG_PID, LOG_USER);
     textOnMenu = [[NSArray alloc]initWithObjects:@"Information",@"Itinerary",@"Newsroom",@"Virtual Business Card",@"Credits", nil];
     [mainTable setDataSource:self];
     [mainTable setDelegate:self];
     [mainTable reloadData];
+    struct event* e = [self getEvents];
     
+    NSString *s = [NSString stringWithCString:ev_title(&e[0])encoding:NSUTF8StringEncoding];
+                  
 	// Do any additional setup after loading the view, typically from a nib.
+}
+
+-(BOOL) update
+{
+    NSlo
+    dispatch_async(kBgQueue, ^{
+        NSData* data = [NSData dataWithContentsOfURL: 
+                        day1URL];
+        [self performSelectorOnMainThread:@selector(fetchedData:) 
+                               withObject:data waitUntilDone:YES];
+    });
+    
+    NSString *s = [[NSString alloc] initWithData: data encoding:NSASCIIStringEncoding];
+    
+    
+    dispatch_async(kBgQueue, ^{
+        NSData* data = [NSData dataWithContentsOfURL: 
+                        day2URL];
+        [self performSelectorOnMainThread:@selector(fetchedData:) 
+                               withObject:data waitUntilDone:YES];
+    });
+    
+    dispatch_async(kBgQueue, ^{
+        NSData* data = [NSData dataWithContentsOfURL: 
+                        day3URL];
+        [self performSelectorOnMainThread:@selector(fetchedData:) 
+                               withObject:data waitUntilDone:YES];
+    });
+}
+
+-(struct event*) getEvents
+{
+    int a;
+    
+    return read_event_list("events.xml", &a);
 }
 
 - (void)viewDidUnload
@@ -40,7 +90,7 @@
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+- (NSInteger*)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
 }

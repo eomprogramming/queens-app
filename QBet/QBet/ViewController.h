@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#include <conf-event.h>
+
+#define nstringof(x) [NSString stringWithCString:(x)encoding:NSUTF8StringEncoding]
 
 @interface ViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>{
     IBOutlet UITableView *mainTable;
