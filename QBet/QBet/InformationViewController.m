@@ -1,0 +1,50 @@
+//
+//  InformationViewController.m
+//  QBet
+//
+//  Created by David Huynh on 12-06-09.
+//  Copyright (c) 2012 EOM. All rights reserved.
+//
+
+#import "InformationViewController.h"
+#import "ViewController.h"
+@interface InformationViewController ()
+
+@end
+
+@implementation InformationViewController
+
+-(IBAction)goBack{
+    ViewController *main = [[ViewController alloc]init];
+    [self presentModalViewController:main animated:NO];
+    [main release];
+}
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    // Do any additional setup after loading the view from its nib.
+}
+
+- (void)viewDidUnload
+{
+    [super viewDidUnload];
+    // Release any retained subviews of the main view.
+    // e.g. self.myOutlet = nil;
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+@end
