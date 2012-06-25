@@ -86,22 +86,28 @@
 						<array class="NSMutableArray" key="IBUIItems">
 							<object class="IBUITabBarItem" id="887884587">
 								<string key="IBUITitle">Nov 1</string>
-								<object class="NSCustomResource" key="IBUIImage" id="112861363">
+								<object class="NSCustomResource" key="IBUIImage">
 									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">QBET LOGO.png</string>
+									<string key="NSResourceName">icon.png</string>
 								</object>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<reference key="IBUITabBar" ref="336876399"/>
 							</object>
 							<object class="IBUITabBarItem" id="801325029">
 								<string key="IBUITitle">Nov 2</string>
-								<reference key="IBUIImage" ref="112861363"/>
+								<object class="NSCustomResource" key="IBUIImage">
+									<string key="NSClassName">NSImage</string>
+									<string key="NSResourceName">icon2.png</string>
+								</object>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<reference key="IBUITabBar" ref="336876399"/>
 							</object>
 							<object class="IBUITabBarItem" id="101901122">
 								<string key="IBUITitle">Nov 3</string>
-								<reference key="IBUIImage" ref="112861363"/>
+								<object class="NSCustomResource" key="IBUIImage">
+									<string key="NSClassName">NSImage</string>
+									<string key="NSResourceName">icon3.png</string>
+								</object>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<reference key="IBUITabBar" ref="336876399"/>
 							</object>
@@ -444,10 +450,11 @@
 		</object>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
-		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="NS.key.0">QBET LOGO.png</string>
-			<string key="NS.object.0">{32, 32}</string>
-		</object>
+		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
+			<string key="icon.png">{32, 32}</string>
+			<string key="icon2.png">{32, 32}</string>
+			<string key="icon3.png">{32, 32}</string>
+		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">1181</string>
 	</data>
 </archive>
