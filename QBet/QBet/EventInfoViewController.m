@@ -41,6 +41,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [eventData setText:@"Tell me if you see this displayed in the event info GUI"];
     // Do any additional setup after loading the view from its nib.
 }
 
