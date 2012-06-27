@@ -19,7 +19,7 @@
  * The number of *_DATA_TYPE data types that can be extracted from an
  * event_data.
  */
-#define NUM_DATA_TYPES 6
+#define NUM_DATA_TYPES 7
 
 /**
  * Data type tag to get the name of an event.
@@ -51,6 +51,11 @@
  * extract_data() will return a char *.
  */
 #define IMAGE_DATA_TYPE 5
+/**
+ * Data type tag to get the speaker of an event.
+ * extract_data() will return a char *.
+ */
+#define SPEAKER_DATA_TYPE 6
 
 /**
  * An internal representation of a place from which to extract data about

@@ -26,6 +26,7 @@ struct event {
 	char *description;
 	char **sponsors;
 	char *image;
+	char *speaker;
 };
 
 /**
@@ -97,5 +98,12 @@ struct event *read_event_list(const char *filename, int *num);
  * @return The location (char *)
  */
 #define ev_image_loc(e) (e)->image
+
+/**
+ * Get the speaker at an event.
+ * @param e a pointer to the event.
+ * @return The speaker (char *)
+ */
+#define ev_speaker(e) (e)->speaker
 
 #endif /* CONF_EVENT_H_ */

@@ -35,6 +35,7 @@ static const struct {
 		.arg = "sponsor"},
 	[DATETIME_DATA_TYPE] = {.name = "datetime", .flags = 0},
 	[IMAGE_DATA_TYPE] = {.name = "image", .flags = 0},
+	[SPEAKER_DATA_TYPE] = {.name = "speaker", .flags = 0},
 };
 
 event_data_source *new_event_source(const char *filename) {

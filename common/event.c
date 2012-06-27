@@ -78,6 +78,8 @@ struct event *read_event_list(const char *filename, int *num) {
 				SPONSORS_DATA_TYPE);
 		under_construction->image = (char *) extract_data(current,
 				IMAGE_DATA_TYPE);
+		under_construction->speaker = (char *) extract_data(current,
+				SPEAKER_DATA_TYPE);
 		iso_date = (char *) extract_data(current, DATETIME_DATA_TYPE);
 		if (iso_date == NULL) {
 			under_construction->datetime = NULL;
