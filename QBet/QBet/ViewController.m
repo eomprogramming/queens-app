@@ -142,7 +142,7 @@
         [newsroom release];
     }
     else if([text isEqualToString:@"Itinerary"]){
-        ItineraryViewController *newsroom = [[ItineraryViewController alloc]init];
+        EventInfoViewController *newsroom = [[EventInfoViewController alloc]init];
         [self presentModalViewController:newsroom animated:NO];
         [newsroom release];
     }
