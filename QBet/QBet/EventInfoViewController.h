@@ -20,5 +20,4 @@
 }
 -(IBAction)getDir;
 -(IBAction)goBack;
--(void)setPrevDate:(NSString*) day AndEventName:(NSString*)nameOfEvent;
 @end

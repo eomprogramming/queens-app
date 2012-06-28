@@ -2,11 +2,23 @@
 
 <event-list>
 	<event name="Perinatal exposure to BPA">
+		<speaker>Samuel Thorðer Dewan</speaker>
 		<location>here</location>
 		<description>An enthralling discussion of something.</description>
 		<sponsors>
 			<sponsor>F. S. vom Saal</sponsor>
 		</sponsors>
 		<image>nothere.png</image>
+	</event>
+	<event name="When the Stars Are Right">
+		<speaker>Cthulhu</speaker>
+		<location>R'lyeh</location>
+		<description>Cthulhu describes preparations for his coming rise. Iä, iä, Cthulhu fhtagn!</description>
+		<sponsors>
+			<sponsor>Hastur</sponsor>
+			<sponsor>Yog-Sothoth</sponsor>
+			<sponsor>H. P. Lovecraft</sponsor>
+		</sponsors>
+		<image>cthulhu-eating-head.png</image>
 	</event>
 </event-list>

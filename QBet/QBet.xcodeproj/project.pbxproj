@@ -35,6 +35,7 @@
 		13C01B161583039200FC96D7 /* NewsroomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C01B141583039200FC96D7 /* NewsroomViewController.m */; };
 		3C210D751598C9E9006C553F /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C210D741598C9E9006C553F /* libxml2.dylib */; };
 		3C210D771598CA5E006C553F /* libqbet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C210D761598CA5E006C553F /* libqbet.a */; };
+		3C71BD01159D1A74007B6B76 /* victoria hall.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 3C71BD00159D1A74007B6B76 /* victoria hall.tiff */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,7 @@
 		13C01B141583039200FC96D7 /* NewsroomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsroomViewController.m; sourceTree = "<group>"; };
 		3C210D741598C9E9006C553F /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		3C210D761598CA5E006C553F /* libqbet.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libqbet.a; path = ../common/libqbet.a; sourceTree = "<group>"; };
+		3C71BD00159D1A74007B6B76 /* victoria hall.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = "victoria hall.tiff"; path = "QBet/victoria hall.tiff"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				137CC23E1598D2C000587F54 /* QBet Logo(2).png */,
 				13C01B031582F7F500FC96D7 /* QBet Main.png */,
 				137CC2371598D2B700587F54 /* icon.png */,
+				3C71BD00159D1A74007B6B76 /* victoria hall.tiff */,
 				137CC2381598D2B700587F54 /* icon2.png */,
 				137CC2391598D2B700587F54 /* icon3.png */,
 				135E5BAF157A95290046896E /* QBet */,
@@ -237,6 +240,7 @@
 				137CC24B1598D2E900587F54 /* CreditsViewController.xib in Resources */,
 				137CC24C1598D2E900587F54 /* EventInfoViewController.xib in Resources */,
 				137CC24D1598D2E900587F54 /* DirectionsViewController.xib in Resources */,
+				3C71BD01159D1A74007B6B76 /* victoria hall.tiff in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
