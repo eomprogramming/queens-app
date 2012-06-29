@@ -109,6 +109,17 @@ struct event *read_event_list(const char *filename, int *num) {
 	return event_list;
 }
 
+long event_list_version(const char *filename) {
+	event_data_source *src;
+	long ret;
+
+	src = new_event_source(filename);
+	ret = event_source_version(src);
+	free_event_source(src);
+
+	return ret;
+}
+
 static void iso_date_to_tm(const char *iso, struct tm *result) {
 	if ((iso == NULL) || (result == NULL)) {
 		syslog(LOG_WARNING, "Bad input to iso_date_to_tm.");

@@ -87,6 +87,15 @@ event_data_source *new_event_source(const char *filename);
 void free_event_source(event_data_source *e);
 
 /**
+ * Get the version number of this event source.
+ * This is a @e file version, not a format version. The contents of the version
+ * are opage to the implementations: they have meaning only to the user.
+ * @param e the event source to test
+ * @return The version of the sorce, or -1 on error.
+ */
+long event_source_version(const event_data_source *e);
+
+/**
  * Count the number of events available  from a given source.
  * @param e the source to count.
  * @return The number of events, or -1 on error

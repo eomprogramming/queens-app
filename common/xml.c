@@ -72,6 +72,16 @@ void free_event_source(event_data_source *e) {
 	free(e);
 }
 
+long event_source_version(const event_data_source *e) {
+	char *val = NULL;
+
+	val = xml_nodeProp(e->n, "version");
+	if (val == NULL)
+		return -1;
+
+	return strtol(val, NULL, 10);
+}
+
 int count_events(const event_data_source *e) {
 	return count_subnodes(e->n, EVENT_ELEMENT_NAME);
 }
