@@ -35,6 +35,7 @@ static const struct {
 		.arg = "sponsor"},
 	[DATETIME_DATA_TYPE] = {.name = "datetime", .flags = 0},
 	[IMAGE_DATA_TYPE] = {.name = "image", .flags = 0},
+	[SPEAKER_DATA_TYPE] = {.name = "speaker", .flags = 0},
 };
 
 event_data_source *new_event_source(const char *filename) {
@@ -69,6 +70,16 @@ event_data_source *new_event_source(const char *filename) {
 void free_event_source(event_data_source *e) {
 	xmlFreeDoc(e->d);
 	free(e);
+}
+
+long event_source_version(const event_data_source *e) {
+	char *val = NULL;
+
+	val = xml_nodeProp(e->n, "version");
+	if (val == NULL)
+		return -1;
+
+	return strtol(val, NULL, 10);
 }
 
 int count_events(const event_data_source *e) {

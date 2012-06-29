@@ -19,7 +19,7 @@
  * The number of *_DATA_TYPE data types that can be extracted from an
  * event_data.
  */
-#define NUM_DATA_TYPES 6
+#define NUM_DATA_TYPES 7
 
 /**
  * Data type tag to get the name of an event.
@@ -51,6 +51,11 @@
  * extract_data() will return a char *.
  */
 #define IMAGE_DATA_TYPE 5
+/**
+ * Data type tag to get the speaker of an event.
+ * extract_data() will return a char *.
+ */
+#define SPEAKER_DATA_TYPE 6
 
 /**
  * An internal representation of a place from which to extract data about
@@ -80,6 +85,15 @@ event_data_source *new_event_source(const char *filename);
  * @param e the data source to free
  */
 void free_event_source(event_data_source *e);
+
+/**
+ * Get the version number of this event source.
+ * This is a @e file version, not a format version. The contents of the version
+ * are opage to the implementations: they have meaning only to the user.
+ * @param e the event source to test
+ * @return The version of the sorce, or -1 on error.
+ */
+long event_source_version(const event_data_source *e);
 
 /**
  * Count the number of events available  from a given source.

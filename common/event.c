@@ -78,6 +78,8 @@ struct event *read_event_list(const char *filename, int *num) {
 				SPONSORS_DATA_TYPE);
 		under_construction->image = (char *) extract_data(current,
 				IMAGE_DATA_TYPE);
+		under_construction->speaker = (char *) extract_data(current,
+				SPEAKER_DATA_TYPE);
 		iso_date = (char *) extract_data(current, DATETIME_DATA_TYPE);
 		if (iso_date == NULL) {
 			under_construction->datetime = NULL;
@@ -105,6 +107,17 @@ struct event *read_event_list(const char *filename, int *num) {
 		*num = event_count;
 
 	return event_list;
+}
+
+long event_list_version(const char *filename) {
+	event_data_source *src;
+	long ret;
+
+	src = new_event_source(filename);
+	ret = event_source_version(src);
+	free_event_source(src);
+
+	return ret;
 }
 
 static void iso_date_to_tm(const char *iso, struct tm *result) {

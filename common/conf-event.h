@@ -26,6 +26,7 @@ struct event {
 	char *description;
 	char **sponsors;
 	char *image;
+	char *speaker;
 };
 
 /**
@@ -52,6 +53,13 @@ struct event {
  * @see EVENT_IS_NULL, struct event
  */
 struct event *read_event_list(const char *filename, int *num);
+
+/**
+ * Read the version number contained in the given file.
+ * @param filename the file to read
+ * @return The version number, or -1 if it does not exist.
+ */
+long event_list_version(const char *filename);
 
 /**
  * Get the title of an event.
@@ -97,5 +105,12 @@ struct event *read_event_list(const char *filename, int *num);
  * @return The location (char *)
  */
 #define ev_image_loc(e) (e)->image
+
+/**
+ * Get the speaker at an event.
+ * @param e a pointer to the event.
+ * @return The speaker (char *)
+ */
+#define ev_speaker(e) (e)->speaker
 
 #endif /* CONF_EVENT_H_ */
