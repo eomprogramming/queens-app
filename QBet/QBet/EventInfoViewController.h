@@ -9,15 +9,16 @@
 #import <UIKit/UIKit.h>
 
 @interface EventInfoViewController : UIViewController<UITabBarDelegate>{
-    IBOutlet UITabBarItem *day1;
-    IBOutlet UITabBarItem *day2;
-    IBOutlet UITabBarItem *day3;
-    IBOutlet UITabBarItem *day4;
-    IBOutlet UITabBarItem *day5;
     IBOutlet UIBarButtonItem *eventLabel;
     IBOutlet UIButton *dirButton;
+    IBOutlet UILabel *speakerLabel;
+    IBOutlet UILabel *sponsorLabel;
+    IBOutlet UITextView *descLabel;
+    IBOutlet UILabel *timeLabel;
+    
     NSString* date;
 }
 -(IBAction)getDir;
 -(IBAction)goBack;
+- (id)initWithEvent:(struct event*) e;
 @end

@@ -8,11 +8,13 @@
 
 #import "EventInfoViewController.h"
 #import "DirectionsViewController.h"
+#import "ViewController.h"
 @interface EventInfoViewController ()
 
 @end
 
 @implementation EventInfoViewController
+struct event* e;
 
 -(IBAction)getDir{
     DirectionsViewController *dvc = [[DirectionsViewController alloc]init];
@@ -27,6 +29,21 @@
 -(void)setPrevDate:(NSString*)day AndEventName:(NSString *)nameOfEvent{
     date = day;
     //Figure out exactly which day it is!!!
+}
+
+- (id)initWithEvent:(struct event*) event
+{
+    [super init];
+    e = event;
+    NSString *s = nstringof(ev_title(e));
+    [eventLabel setTitle:s];
+    [speakerLabel setText:[speakerLabel text] stringByAppendingString:nstringof(@"asdf")];
+    [sponsorLabel setText:@"asdf"];
+    [dirButton setTitle:@"asdf" forState:UIControlStateNormal];
+    [descLabel setText:nstringof(ev_desc(e))];
+    [descLabel setText:@"sdf"];
+    NSLog(s);
+    return self;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

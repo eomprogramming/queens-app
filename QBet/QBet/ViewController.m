@@ -11,6 +11,7 @@
 #import "NewsroomViewController.h"
 #import "ItineraryViewController.h"
 #import "InformationViewController.h"
+#import "EventInfoViewController.h"
 #include <syslog.h>
 
 #define kBgQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0) //1
@@ -33,11 +34,11 @@
     [mainTable setDataSource:self];
     [mainTable setDelegate:self];
     [mainTable reloadData];
-    struct event* e = [self getEvents];
+    struct event* e = [ViewController getEvents];
     
-    NSString *s = [NSString stringWithCString:ev_title(&e[0])encoding:NSUTF8StringEncoding];
+    NSString *s = [NSString stringWithCString:ev_desc(&e[1])encoding:NSUTF8StringEncoding];
                   
-    
+    NSLog(s);
     
 	// Do any additional setup after loading the view, typically from a nib.
 }
@@ -82,11 +83,11 @@
     });
 }
 
--(struct event*) getEvents
++(struct event*) getEvents
 {
     int a;
     
-    return read_event_list("events.xml", &a);
+    return read_event_list("/Users/Ian/Code/queens-app/QBet/events.xml", &a);
 }
 
 - (void)viewDidUnload
@@ -142,7 +143,7 @@
         [newsroom release];
     }
     else if([text isEqualToString:@"Itinerary"]){
-        EventInfoViewController *newsroom = [[EventInfoViewController alloc]initWithNibName:nil bundle:nil];
+        ItineraryViewController *newsroom = [[ItineraryViewController alloc]initWithNibName:nil bundle:nil];
         [self presentModalViewController:newsroom animated:NO];
         [newsroom release];
     }
