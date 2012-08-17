@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "QBet/EventInfoViewController.h"
+#import <conf-event.h>
 
 @interface DirectionsViewController : UIViewController<UIPickerViewDelegate>{
     IBOutlet UIWebView *map;
@@ -14,4 +16,5 @@
     IBOutlet UIPickerView *destinationPicker;
 }
 -(IBAction)getDestination;
+-(id) init:(NSString*) loc backTo: (struct event*) e;
 @end

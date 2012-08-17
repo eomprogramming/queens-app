@@ -9,12 +9,13 @@
 #import "ItineraryViewController.h"
 #import "ViewController.h"
 #import "EventInfoViewController.h"
+#import "EventDataGetter.h"
 @interface ItineraryViewController ()
 
 @end
 
 @implementation ItineraryViewController
-
+struct event* e;
 -(IBAction)goBack{
     ViewController *main = [[ViewController alloc]init];
     [self presentModalViewController:main animated:NO];
@@ -64,6 +65,24 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [EventDataGetter init];
+    
+    e = [ViewController getEvents];
+    struct event current;
+    
+    eventData = [[NSMutableArray alloc]init];
+    for (int i = 0; !EVENT_IS_NULL(&(e[i])); i++)
+    {
+        current = e[i];
+        NSString *s = [NSString stringWithCString:ev_title(&e[i])encoding:NSUTF8StringEncoding];
+        [eventData addObject:s];
+    }
+    //[eventData addObject:nil];
+
+    [eventTable setDataSource:self];
+    [eventTable setDelegate:self];
+    [eventTable reloadData];
     
     NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"MM dd  yy"];
@@ -144,7 +163,7 @@
 {
     NSString *text = [[tableView cellForRowAtIndexPath:indexPath].textLabel.text autorelease];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    EventInfoViewController *event = [[EventInfoViewController alloc]init];
+    EventInfoViewController *event = [[EventInfoViewController alloc]initWithEvent:&e[indexPath.row]];
     [self presentModalViewController:event animated:YES];
     [event setPrevDate:[NSString stringWithFormat:@"11 0%@ 12",[[dateLabel.title substringToIndex:[dateLabel.title rangeOfString:@","].location]substringFromIndex:[dateLabel.title rangeOfString:@" "].location+1]] AndEventName:text];
 }

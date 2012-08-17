@@ -3,8 +3,9 @@
 <event-list>
 	<event name="Quantum Computing">
 		<speaker>Samuel Thorðer Dewan</speaker>
-		<location>here</location>
+		<location>Far Away</location>
 		<description>An enthralling discussion of something.</description>
+		<datetime>2012-11-01T13:13:00</datetime>
 		<sponsors>
 			<sponsor>F. S. vom Saal</sponsor>
 		</sponsors>
@@ -14,11 +15,12 @@
 		<speaker>Cthulhu</speaker>
 		<location>R'lyeh</location>
 		<description>Cthulhu describes preparations for his coming rise. Iä, iä, Cthulhu fhtagn!</description>
+		<datetime>2012-12-21T00:00:00</datetime>
 		<sponsors>
 			<sponsor>Hastur</sponsor>
 			<sponsor>Yog-Sothoth</sponsor>
 			<sponsor>H. P. Lovecraft</sponsor>
 		</sponsors>
-		<image>cthulhu-eating-head.png</image>
+		<image>cthulhu-eating-head.jpg</image>
 	</event>
 </event-list>

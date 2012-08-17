@@ -39,6 +39,7 @@
     NSString *s = [NSString stringWithCString:ev_desc(&e[1])encoding:NSUTF8StringEncoding];
                   
     NSLog(s);
+    NSLog(NSHomeDirectory());
     
 	// Do any additional setup after loading the view, typically from a nib.
 }

@@ -36,6 +36,7 @@
 		3C210D751598C9E9006C553F /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C210D741598C9E9006C553F /* libxml2.dylib */; };
 		3C210D771598CA5E006C553F /* libqbet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C210D761598CA5E006C553F /* libqbet.a */; };
 		3C71BD01159D1A74007B6B76 /* victoria hall.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 3C71BD00159D1A74007B6B76 /* victoria hall.tiff */; };
+		3CD1F20815A35F5E0029408D /* EventDataGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CD1F20715A35F5E0029408D /* EventDataGetter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +80,8 @@
 		3C210D741598C9E9006C553F /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		3C210D761598CA5E006C553F /* libqbet.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libqbet.a; path = ../common/libqbet.a; sourceTree = "<group>"; };
 		3C71BD00159D1A74007B6B76 /* victoria hall.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = "victoria hall.tiff"; path = "QBet/victoria hall.tiff"; sourceTree = "<group>"; };
+		3CD1F20615A35F5E0029408D /* EventDataGetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDataGetter.h; sourceTree = "<group>"; };
+		3CD1F20715A35F5E0029408D /* EventDataGetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDataGetter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +153,8 @@
 				13C01B0A1582F84B00FC96D7 /* CreditsViewController.m */,
 				135E5BCB157A9E270046896E /* EventInfoViewController.h */,
 				135E5BCC157A9E270046896E /* EventInfoViewController.m */,
+				3CD1F20615A35F5E0029408D /* EventDataGetter.h */,
+				3CD1F20715A35F5E0029408D /* EventDataGetter.m */,
 				135E5BD0157AA55C0046896E /* DirectionsViewController.h */,
 				135E5BD1157AA55C0046896E /* DirectionsViewController.m */,
 				137CC2401598D2E800587F54 /* ViewController.xib */,
@@ -260,6 +265,7 @@
 				13C01B11158300BB00FC96D7 /* ItineraryViewController.m in Sources */,
 				13C01B161583039200FC96D7 /* NewsroomViewController.m in Sources */,
 				13A978EE1583CBEC00E6520C /* InformationViewController.m in Sources */,
+				3CD1F20815A35F5E0029408D /* EventDataGetter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

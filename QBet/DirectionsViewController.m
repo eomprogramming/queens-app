@@ -7,6 +7,10 @@
 //
 
 #import "DirectionsViewController.h"
+#import "QBet/EventInfoViewController.h"
+
+NSString* location;
+struct event* ev;
 
 @interface DirectionsViewController ()
 
@@ -16,6 +20,13 @@
 
 -(IBAction)getDestination{
     
+}
+
+-(id) init:(NSString*) loc backTo: (struct event*) e
+{
+    location = loc;
+    ev = e;
+    return self;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -30,8 +41,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    [map loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://maps.google.ca/maps?saddr=My%20Location&daddr=Victoria%20Hall,%20Queen%27s%20University,%20Kingston,%20ON"]]];
+    location = [location stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+    [map loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[@"http://maps.google.ca/maps?saddr=My%20Location&daddr=" stringByAppendingString:[location stringByAppendingString:@",%20Kingston,%20ON"]]]]];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -50,6 +61,12 @@
 
 - (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
     
+}
+
+-(IBAction)goBack{
+    EventInfoViewController* blah = [[EventInfoViewController alloc] initWithEvent: ev];
+    [self presentModalViewController:blah animated:NO];
+    [blah release];
 }
 
 @end

@@ -15,6 +15,7 @@
     IBOutlet UILabel *sponsorLabel;
     IBOutlet UITextView *descLabel;
     IBOutlet UILabel *timeLabel;
+    IBOutlet UIImageView *image;
     
     NSString* date;
 }
