@@ -19,6 +19,13 @@ static NSString * cacheLoc;
     cacheLoc = [[NSString alloc] initWithString:[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0]];
 }
 
++(struct event*) getEvents:(NSInteger) day
+{
+    int a;
+   // NSLog([[NSString alloc] initWithFormat:@"/Users/Ian/Code/queens-app/QBet/day%i.xml", day ]);
+    return read_event_list([[[NSString alloc] initWithFormat:@"/Users/Ian/Code/queens-app/QBet/day%i.xml", day] UTF8String], &a);
+}
+
 + (void) getFileFromInterwebs:(NSString *)name {
     
 }
@@ -26,6 +33,7 @@ static NSString * cacheLoc;
 + (int) isUpToDate: (NSString *) name {
     if (!exists(cacheLoc, name))
         return 0;
+    return 1;
     // TODO
 }
 
@@ -33,7 +41,7 @@ static NSString * cacheLoc;
     if ((date < 1) || (date > 3))
         return NULL;
     
-    NSString *file = [cacheLoc stringByAppendingPathComponent:[[NSString alloc] initWithFormat:@"%i", date]];
+    NSString *file = [cacheLoc stringByAppendingPathComponent:[[NSString alloc] initWithFormat:@"day%i", date]];
     if ([self isUpToDate:file]) {
         return read_event_list([file UTF8String], NULL);
     } else {

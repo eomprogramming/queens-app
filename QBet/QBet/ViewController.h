@@ -15,5 +15,5 @@
     IBOutlet UITableView *mainTable;
     NSArray *textOnMenu;
 }
-+(struct event*) getEvents;
+
 @end

@@ -21,4 +21,6 @@
 }
 -(IBAction)goBack;
 -(void)changeDates:(NSString *)date;
+- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item;
+
 @end

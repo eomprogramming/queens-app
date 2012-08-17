@@ -27,19 +27,12 @@
 
 - (void)viewDidLoad
 {
-    NSLog(@"hgkkh");
     [super viewDidLoad];
     openlog("QBet App", LOG_PID, LOG_USER);
     textOnMenu = [[NSArray alloc]initWithObjects:@"Information",@"Itinerary",@"Newsroom",@"Virtual Business Card",@"Credits", nil];
     [mainTable setDataSource:self];
     [mainTable setDelegate:self];
     [mainTable reloadData];
-    struct event* e = [ViewController getEvents];
-    
-    NSString *s = [NSString stringWithCString:ev_desc(&e[1])encoding:NSUTF8StringEncoding];
-                  
-    NSLog(s);
-    NSLog(NSHomeDirectory());
     
 	// Do any additional setup after loading the view, typically from a nib.
 }
@@ -84,12 +77,7 @@
     });
 }
 
-+(struct event*) getEvents
-{
-    int a;
-    
-    return read_event_list("/Users/Ian/Code/queens-app/QBet/events.xml", &a);
-}
+
 
 - (void)viewDidUnload
 {

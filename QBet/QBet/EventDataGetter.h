@@ -19,5 +19,6 @@
 + (struct event *) getEventsForDay: (int) date;
 + (int) getEventCountForDay: (int) date;
 + (UIImage *) imageByName: (NSString *) name;
++(struct event*) getEvents: (NSInteger) day;
 
 @end

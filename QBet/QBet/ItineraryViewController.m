@@ -67,8 +67,7 @@ struct event* e;
     [super viewDidLoad];
     
     [EventDataGetter init];
-    
-    e = [ViewController getEvents];
+    e = [EventDataGetter getEvents:1];
     struct event current;
     
     eventData = [[NSMutableArray alloc]init];
@@ -166,5 +165,34 @@ struct event* e;
     EventInfoViewController *event = [[EventInfoViewController alloc]initWithEvent:&e[indexPath.row]];
     [self presentModalViewController:event animated:YES];
     [event setPrevDate:[NSString stringWithFormat:@"11 0%@ 12",[[dateLabel.title substringToIndex:[dateLabel.title rangeOfString:@","].location]substringFromIndex:[dateLabel.title rangeOfString:@" "].location+1]] AndEventName:text];
+}
+
+- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item
+{
+    NSInteger day;
+    if(item == day3)
+        day = 3;
+    else if(item == day2)
+        day = 2;
+    else
+        day = 1;
+    //NSLog(@"%i", day);
+    e = [EventDataGetter getEvents:day];
+    struct event current;
+    
+    eventData = [[NSMutableArray alloc]init];
+    for (int i = 0; !EVENT_IS_NULL(&(e[i])); i++)
+    {
+        current = e[i];
+        NSString *s = [NSString stringWithCString:ev_title(&e[i])encoding:NSUTF8StringEncoding];
+        [eventData addObject:s];
+    }
+    //[eventData addObject:nil];
+    
+    [eventTable setDataSource:self];
+    [eventTable setDelegate:self];
+    [eventTable reloadData];
+    
+    [dateLabel setTitle:[[NSString alloc] initWithFormat: @"November %i, 2012", day]];
 }
 @end
