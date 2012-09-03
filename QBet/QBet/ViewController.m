@@ -15,9 +15,9 @@
 #include <syslog.h>
 
 #define kBgQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0) //1
-#define day1URL [NSURL URLWithString:@"http://QBET.ca/QBETAPPEVENTS/day1"] //2
-#define day2URL [NSURL URLWithString:@"http://QBET.ca/QBETAPPEVENTS/day2"] //2
-#define day3URL [NSURL URLWithString:@"http://QBET.ca/QBETAPPEVENTS/day3"] //2
+#define day1URL [NSURL URLWithString:@"http://QBET.ca/QBETAPPEVENTS/day1.xml"] //2
+#define day2URL [NSURL URLWithString:@"http://QBET.ca/QBETAPPEVENTS/day2.xml"] //2
+#define day3URL [NSURL URLWithString:@"http://QBET.ca/QBETAPPEVENTS/day3.xml"] //2
 
 @interface ViewController ()
 
@@ -28,6 +28,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self update];
     openlog("QBet App", LOG_PID, LOG_USER);
     textOnMenu = [[NSArray alloc]initWithObjects:@"Information",@"Itinerary",@"Newsroom",@"Virtual Business Card",@"Credits", nil];
     [mainTable setDataSource:self];
@@ -54,12 +55,12 @@
     
     //make a file name to write the data to using the
     //documents directory:
-    NSString *fullFileName = [NSString stringWithFormat:@"%@/test", documentsDirectory];
+    NSString *fullFileName = [NSString stringWithFormat:@"%@/day1.xml", documentsDirectory];
 
     //this statement is what actually writes out the array
     //to the file system:
     [s writeToFile:fullFileName atomically:NO];
-    NSLog(@"HARRO ASSHOLE, %@",fullFileName);
+    NSLog(@"day1: %@",fullFileName);
     
     
     dispatch_async(kBgQueue, ^{
@@ -69,12 +70,31 @@
                                withObject:data waitUntilDone:YES];
     });
     
+    s = [[NSString alloc] initWithData: data encoding:NSASCIIStringEncoding];
+    //make a file name to write the data to using the
+    //documents directory:
+    fullFileName = [NSString stringWithFormat:@"%@/day2.xml", documentsDirectory];
+
+    //this statement is what actually writes out the array
+    //to the file system:
+    [s writeToFile:fullFileName atomically:NO];
+    NSLog(@"day2: %@",fullFileName);
+    
     dispatch_async(kBgQueue, ^{
         NSData* data = [NSData dataWithContentsOfURL: 
                         day3URL];
         [self performSelectorOnMainThread:@selector(fetchedData:) 
                                withObject:data waitUntilDone:YES];
     });
+    s = [[NSString alloc] initWithData: data encoding:NSASCIIStringEncoding];
+    //make a file name to write the data to using the
+    //documents directory:
+    fullFileName = [NSString stringWithFormat:@"%@/day3.xml", documentsDirectory];
+
+    //this statement is what actually writes out the array
+    //to the file system:
+    [s writeToFile:fullFileName atomically:NO];
+    NSLog(@"day3: %@",fullFileName);
 }
 
 
