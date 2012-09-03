@@ -19,6 +19,12 @@
 #define day2URL [NSURL URLWithString:@"http://QBET.ca/QBETAPPEVENTS/day2.xml"] //2
 #define day3URL [NSURL URLWithString:@"http://QBET.ca/QBETAPPEVENTS/day3.xml"] //2
 
+/*
+#define day1URL [NSURL URLWithString:@"http://www.eomprogramming.site90.com/day1.xml"] //2
+#define day2URL [NSURL URLWithString:@"http://www.eomprogramming.site90.com/day2.xml"] //2
+#define day3URL [NSURL URLWithString:@"http://www.eomprogramming.site90.com/day3.xml"] //2
+*/
+
 @interface ViewController ()
 
 @end
